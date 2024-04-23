@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="TALE: Training-free Cross-domain Image Composition via Adaptive Latent Manipulation and Energy-guided Optimization">
+  <meta name="keywords" content="Diffusion Models, Image Composition, Training-free, Cross-domain">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TALE: Training-free Cross-domain Image Composition via Adaptive Latent Manipulation and Energy-guided Optimization</title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <link rel="icon" type="image/png" href="./static/images/tale_logo.png">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">TALE: Training-free Cross-domain Image Composition via Adaptive Latent Manipulation and Energy-guided Optimization</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://tkpham.github.io/">Kien T. Pham</a><sup>1</sup>,</span>
+            <span class="author-block">
+            <span class="author-block">
+              <a href="https://jingyechen.github.io/">Jingye Chen</a><sup>1</sup>,</span>
+            <span class="author-block">
+            <span class="author-block">
+              <a href="https://cqf.io/">Qifeng Chen</a><sup>1</sup>,</span>
+            <span class="author-block">
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>HKUST,</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                   <! -- This is for paper link --> 
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper (Coming soon)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                   <! -- This is for code link --> 
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming soon)</span>
+                  </a>
+              <span class="link-block">
+                <a href=""
+                    class="external-link button is-normal is-rounded is-dark">
+                    <! -- This is for demo link --> 
+                  <span class="icon">
+                    <i class="fa-solid fa-computer"></i>
+                  </span>
+                  <span>Demo (Coming soon)</span>
+                  </a>
+              <span class="link-block">
+                <a href=""
+                    class="external-link button is-normal is-rounded is-dark">
+                    <! -- This is for colab link --> 
+                  <span class="icon">
+                    <i class="fa-solid fa-computer"></i>
+                  </span>
+                  <span>Colab (Coming soon)</span>
+                  </a>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div class="scrolling-image">
+  <img src="./static/images/tale_scroll.jpg" alt="scrolling image">
+</div>
+
+
+<style>
+/* 定义动画属性 */
+@keyframes scroll {
+    0% {
+        transform: translateX(0%);
+        /* 初始位置 */
+    }
+
+    50% {
+        transform: translateX(-50%);
+        /* 滚动到最左侧 */
+    }
+
+    50.01% {
+        transform: translateX(0%);
+        /* 立即出现在最右侧 */
+    }
+
+    100% {
+        transform: translateX(-50%);
+        /* 滚动到最左侧 */
+    }
+
+}
+
+.scrolling-image {
+    overflow: hidden;
+    /* 隐藏超出边界的内容 */
+}
+
+.scrolling-image:hover img {
+    animation-play-state: paused;
+}
+
+/* 将动画应用于图像 */
+.scrolling-image img {
+    width: 250%;
+    /* 图片宽度为容器宽度的3倍 */
+    animation: scroll 105s linear infinite;
+    /* 设置动画属性 */
+    animation-play-state: running; /* 初始化动画状态为运行 */
+}
+
+
+</style>
+
+<section class="section">
+  <div class="container is-max-desktop">
+  <!-- <div class="container"> -->
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-four-fifths"> -->
+      <div class="column is-full-width">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present <strong>TALE</strong>, a novel <em>training-free</em> framework harnessing the power of text-driven diffusion models to tackle <em>cross-domain image composition</em> task that aims at seamlessly incorporating user-provided objects into a specific visual context regardless of domain disparity. Previous methods often involve either training auxiliary networks or finetuning diffusion models on customized datasets, which are expensive and may undermine the robust textual and visual priors of pretrained diffusion models. Some recent works attempt to break the barrier by proposing training-free workarounds that rely on manipulating attention maps to tame the denoising process implicitly. However, composing via attention maps does not necessarily yield desired compositional outcomes. These approaches could only retain some semantic information and usually fall short in preserving identity characteristics of input objects or exhibit limited background-object style adaptation in generated images. In contrast, TALE is a novel method that operates directly on latent space to provide explicit and effective guidance for the composition process to resolve these problems. Specifically, we equip TALE with two mechanisms dubbed <strong>Adaptive Latent Manipulation</strong> and <strong>Energy-guided Latent Optimization</strong>. The former formulates noisy latents conducive to initiating and steering the composition process by directly leveraging background and foreground latents at corresponding timesteps, and the latter exploits designated energy functions to further optimize intermediate latents conforming to specific conditions that complement the former to generate desired final results. Our experiments demonstrate that TALE surpasses prior baselines and attains state-of-the-art performance in image-guided composition across various photorealistic and artistic domains.
+          </p>
+        </div>
+        <!-- <img src="./static/images/introduction.jpg" alt="comparison_table" style="width:70%; ">
+        <div text-align:center>
+          <p class="center">
+            TextDiffuser generates accurate and coherent text images from text prompts or together
+with template images, as well as conducting text inpainting to reconstruct incomplete images.
+          </p>
+        </div> -->
+      </div>
+    </div>
+
+    <!-- Pipeline. -->
+<!--     <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <br />
+        <h2 class="title is-3">Pipeline</h2>
+          <img src="./static/images/approach.pdf" alt="pipeline1" style="width:70%; ">
+        <div class="content has-text-justified">
+          <p>
+            TextDiffuser consists of two stages. In the first Layout Generation stage, a Transformer-based encoder-decoder model generates character-level segmentation masks that indicate the layout of keywords in images from text prompts. In the second Image Generation stage, a diffusion model generates images conditioned on noisy features, segmentation masks, feature masks, and masked features (from left to right) along with text prompts. The feature masks can cover the entire or part of the image, corresponding to whole-image and part-image generation. The diffusion model learns to denoise features progressively with a denoising and character-aware loss. Please note that TALE operates in the latent space, but we use the image pixels for better visualization.
+          </p>
+        </div>
+      </div>
+    </div> -->
+
+
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="container is-max-desktop">
+        <br />
+        <h2 class="title is-3">Results</h2>
+
+        <img src="./static/images/qualitative.pdf" alt="results_qualitative" style="width:100%; ">
+        <div text-align:center>
+          <p class="center">
+            Qualitative comparison of TALE with prior SOTA and concurrent works in cross-domain image-guided composition.
+            From top to bottom are representative results for compositing between real and watercolor, oil painting, comic, photorealism,
+            sketching, and cartoon animation domains
+          </p>
+        </div>
+
+        <p>
+        </p>
+
+        <img src="./static/images/quantitative_crossdomain.pdf" alt="results_quantitative_cross" style="width:100%; ">
+        <div text-align:center>
+          <p class="center">
+            Qualitative comparison of TALE with prior SOTA and concurrent works in cross-domain image-guided composition.
+            From top to bottom are representative results for compositing between real and watercolor, oil painting, comic, photorealism,
+            sketching, and cartoon animation domains
+          </p>
+        </div>
+
+        <side-by-side-img>
+            <img src='./static/images/quantitative_samedomain.png' alt='results_quantitative_same' />
+            <figcaption>Caption goes here</figcaption>
+        </side-by-side-img>
+        <side-by-side-img>
+            <img src='./static/images/userstudy.pdf' alt='results_userstudy' />
+            <figcaption>Caption goes here</figcaption>
+        </side-by-side-img>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Contact</h2>
+    For help or issues using TextDiffuser, please email Jingye Chen <a rel="license" href="mailto:qwerty.chen@connect.ust.hk">(qwerty.chen@connect.ust.hk)</a>
+    , Yupan Huang <a rel="license" href="mailto:huangyp28@mail2.sysu.edu.cn">(huangyp28@mail2.sysu.edu.cn)</a> or submit a GitHub issue. For other communications related to TextDiffuser, please contact Lei Cui <a rel="license" href="mailto:lecu@microsoft.com">(lecu@microsoft.com)</a> or Furu Wei <a rel="license" href="mailto:fuwei@microsoft.com">(fuwei@microsoft.com)</a>.
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{chen2023textdiffuser,
+        title={TextDiffuser: Diffusion Models as Text Painters},
+        author={Chen, Jingye and Huang, Yupan and Lv, Tengchao and Cui, Lei and Chen, Qifeng and Wei, Furu},
+        journal={arXiv preprint arXiv:2305.10855},
+        year={2023}
+      }
+</code></pre>
+  </div>
+</section> -->
+
+
+
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

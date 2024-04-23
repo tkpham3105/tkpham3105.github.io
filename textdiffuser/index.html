@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="TextDiffuser: Diffusion Models as Text Painters">
+  <meta name="keywords" content="Diffusion Models, Text Rendering, Optical Character Recognition">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TextDiffuser: Diffusion Models as Text Painters</title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <link rel="icon" type="image/png" href="./static/images/painter.png">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">TextDiffuser: Diffusion Models as Text Painters</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://jingyechen.github.io/">Jingye Chen</a><sup>*13</sup>,</span>
+            <span class="author-block">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=ZbCCBogAAAAJ&hl">Yupan Huang</a><sup>*23</sup>,</span>
+            <span class="author-block">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=ZbCCBogAAAAJ&hl">Tengchao Lv</a><sup>3</sup>,</span>
+            <span class="author-block">
+            <span class="author-block">
+              <a href="https://www.microsoft.com/en-us/research/people/lecu/?from=https://research.microsoft.com/en-us/people/lecu/&type=exact">Lei Cui</a><sup>3</sup>,</span>
+            <span class="author-block">
+            <span class="author-block">
+              <a href="https://cqf.io/">Qifeng Chen</a><sup>1</sup>,</span>
+            <span class="author-block">
+            <span class="author-block">
+              <a href="https://thegenerality.com/">Furu Wei</a><sup>3</sup>,</span>
+            <span class="author-block">
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>HKUST,</span>
+			      <span class="author-block"><sup>2</sup>Sun Yat-sen University,</span>
+            <span class="author-block"><sup>3</sup>Microsoft Research</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <sup>*</sup>Equal Contribution
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2305.10855"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/microsoft/unilm/tree/master/textdiffuser"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/JingyeChen22/TextDiffuser"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fa-solid fa-computer"></i>
+                  </span>
+                  <span>Demo</span>
+                  </a>
+              <span class="link-block">
+                <a href="https://colab.research.google.com/drive/115Qw0l5dhjlTtrbywMWRwhz9IxKE4_Dg?usp=sharing"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fa-solid fa-computer"></i>
+                  </span>
+                  <span>Colab</span>
+                  </a>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div class="scrolling-image">
+  <img src="./static/images/scroll.jpg" alt="scrolling image">
+</div>
+
+
+<style>
+/* 定义动画属性 */
+@keyframes scroll {
+    0% {
+        transform: translateX(0%);
+        /* 初始位置 */
+    }
+
+    50% {
+        transform: translateX(-50%);
+        /* 滚动到最左侧 */
+    }
+
+    50.01% {
+        transform: translateX(0%);
+        /* 立即出现在最右侧 */
+    }
+
+    100% {
+        transform: translateX(-50%);
+        /* 滚动到最左侧 */
+    }
+
+}
+
+.scrolling-image {
+    overflow: hidden;
+    /* 隐藏超出边界的内容 */
+}
+
+.scrolling-image:hover img {
+    animation-play-state: paused;
+}
+
+/* 将动画应用于图像 */
+.scrolling-image img {
+    width: 250%;
+    /* 图片宽度为容器宽度的3倍 */
+    animation: scroll 105s linear infinite;
+    /* 设置动画属性 */
+    animation-play-state: running; /* 初始化动画状态为运行 */
+}
+
+
+</style>
+
+<section class="section">
+  <div class="container is-max-desktop">
+  <!-- <div class="container"> -->
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-four-fifths"> -->
+      <div class="column is-full-width">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            Diffusion models have gained increasing attention for their impressive generation abilities but currently struggle with rendering accurate and coherent text. To address this issue, we introduce <strong>TextDiffuser</strong> focusing on generating images with visually appealing text that is coherent with backgrounds. 
+            TextDiffuser consists of two stages: first, a Transformer model generates the layout of keywords extracted from text prompts, and then diffusion models generate images conditioned on the text prompt and the generated layout. Additionally, we contribute the first large-scale text images dataset with OCR annotations, <strong>MARIO-10M</strong>, containing 10 million image-text pairs with text recognition, detection, and character-level segmentation annotations. 
+            We further collect the <strong>MARIO-Eval</strong> benchmark to serve as a comprehensive tool for evaluating text rendering quality. Through experiments and user studies, we show that TextDiffuser is flexible and controllable to create high-quality text images using text prompts alone or together with text template images, and conduct text inpainting to reconstruct incomplete images with text. The code, model, and dataset will be  available at <a href="https://aka.ms/textdiffuser">https://aka.ms/textdiffuser</a>.
+          </p>
+        </div>
+        <img src="./static/images/introduction.jpg" alt="comparison_table" style="width:70%; ">
+        <div text-align:center>
+          <p class="center">
+            TextDiffuser generates accurate and coherent text images from text prompts or together
+with template images, as well as conducting text inpainting to reconstruct incomplete images.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pipeline. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <br />
+        <h2 class="title is-3">Pipeline</h2>
+          <img src="./static/images/architecture.jpg" alt="pipeline1" style="width:70%; ">
+        <div class="content has-text-justified">
+          <p>
+            TextDiffuser consists of two stages. In the first Layout Generation stage, a Transformer-based encoder-decoder model generates character-level segmentation masks that indicate the layout of keywords in images from text prompts. In the second Image Generation stage, a diffusion model generates images conditioned on noisy features, segmentation masks, feature masks, and masked features (from left to right) along with text prompts. The feature masks can cover the entire or part of the image, corresponding to whole-image and part-image generation. The diffusion model learns to denoise features progressively with a denoising and character-aware loss. Please note that the diffusion model operates in the latent space, but we use the image pixels for better visualization.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="container is-max-desktop">
+        <br />
+        <h2 class="title is-3">More Results</h2>
+
+        <img src="./static/images/result.jpg" alt="more_results_single" style="width:70%; ">
+        <div text-align:center>
+          <p class="center">
+            Visualizations of whole-image generation compared with existing methods. The first three
+            cases are generated from prompts and the last three cases are from given printed template images.
+          </p>
+        </div>
+
+        <p>
+        </p>
+
+        <img src="./static/images/inpaint.jpg" alt="more_results_multi" style="width:70%; ">
+        <div text-align:center>
+          <p class="center">
+            Visualizations of part-image generation (text inpainting) from given images.
+          </p>
+        </div>
+
+        <p>
+        </p>
+  
+        <img src="./static/images/table1.jpg" alt="more_results_multi" style="width:80%; ">
+        <div text-align:center>
+          <p class="center">
+            The performance of text-to-image compared with existing methods. TextDiffuser performs
+the best regarding CLIPScore and OCR evaluation while achieving comparable performance on FID.
+          </p>
+        </div>
+
+        <p>
+        </p>
+
+        <img src="./static/images/study1.jpg" alt="more_results_multi" style="width:85%; ">
+        <div text-align:center>
+          <p class="center">
+            User studies for whole-image generation and part-image generation tasks. (a) For whole-image generation, our method clearly outperforms
+            others in both aspects of text rendering quality and image-text matching. (b) For part-image generation, our method receives
+            high scores from human evaluators in these two aspects.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Contact</h2>
+    For help or issues using TextDiffuser, please email Jingye Chen <a rel="license" href="mailto:qwerty.chen@connect.ust.hk">(qwerty.chen@connect.ust.hk)</a>
+    , Yupan Huang <a rel="license" href="mailto:huangyp28@mail2.sysu.edu.cn">(huangyp28@mail2.sysu.edu.cn)</a> or submit a GitHub issue. For other communications related to TextDiffuser, please contact Lei Cui <a rel="license" href="mailto:lecu@microsoft.com">(lecu@microsoft.com)</a> or Furu Wei <a rel="license" href="mailto:fuwei@microsoft.com">(fuwei@microsoft.com)</a>.
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{chen2023textdiffuser,
+        title={TextDiffuser: Diffusion Models as Text Painters},
+        author={Chen, Jingye and Huang, Yupan and Lv, Tengchao and Cui, Lei and Chen, Qifeng and Wei, Furu},
+        journal={arXiv preprint arXiv:2305.10855},
+        year={2023}
+      }
+</code></pre>
+  </div>
+</section>
+
+
+
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

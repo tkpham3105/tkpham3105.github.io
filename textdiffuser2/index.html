@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="TextDiffuser-2: Unleashing the Power of Language Models for Text Rendering">
+  <meta name="keywords" content="Diffusion Models, Text Rendering, Optical Character Recognition">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TextDiffuser-2: Unleashing the Power of Language Models for Text Rendering</title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <link rel="icon" type="image/png" href="./static/images/painter.png">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">TextDiffuser-2: Unleashing the Power of Language Models for Text Rendering</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://jingyechen.github.io/">Jingye Chen</a><sup>13</sup>,</span>
+            <span class="author-block">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=ZbCCBogAAAAJ&hl">Yupan Huang</a><sup>23</sup>,</span>
+            <span class="author-block">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=ZbCCBogAAAAJ&hl">Tengchao Lv</a><sup>3</sup>,</span>
+            <span class="author-block">
+            <span class="author-block">
+              <a href="https://www.microsoft.com/en-us/research/people/lecu/?from=https://research.microsoft.com/en-us/people/lecu/&type=exact">Lei Cui</a><sup>3</sup>,</span>
+            <span class="author-block">
+            <span class="author-block">
+              <a href="https://cqf.io/">Qifeng Chen</a><sup>1</sup>,</span>
+            <span class="author-block">
+            <span class="author-block">
+              <a href="https://thegenerality.com/">Furu Wei</a><sup>3</sup>,</span>
+            <span class="author-block">
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>HKUST,</span>
+			      <span class="author-block"><sup>2</sup>Sun Yat-sen University,</span>
+            <span class="author-block"><sup>3</sup>Microsoft Research</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2311.16465"
+                   class="external-link button is-normal is-rounded is-dark">
+                 
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/microsoft/unilm/tree/master/textdiffuser-2"
+                   class="external-link button is-normal is-rounded is-dark">
+                 
+                  <span>Code</span>
+                  </a>
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/JingyeChen22/TextDiffuser-2"
+                    class="external-link button is-normal is-rounded is-dark">
+                  
+                  <span>Demo</span>
+                  </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ <style>
+  * { box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; }
+
+
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+.dots {
+  text-align: center;
+  padding: 6px 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 6px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active-dot {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+</style>
+</head>
+<body>
+
+<div class="slider">
+  <div class="slide fade">
+    <img src="img1.jpg" alt="Image 1">
+  </div>
+  <div class="slide fade">
+    <img src="img2.jpg" alt="Image 2">
+  </div>
+  <div class="slide fade">
+    <img src="img3.jpg" alt="Image 3">
+  </div>
+  <div class="slide fade">
+    <img src="img4.jpg" alt="Image 4">
+  </div>
+</div>
+
+<div class="dots">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+</div>
+
+
+<script>
+  let slideIndex = 0;
+  showSlides();
+  
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("slide");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active-dot", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active-dot";
+    // setTimeout(showSlides, 6000); // Change image every 4 seconds
+  }
+  
+  function currentSlide(n) {
+    slideIndex = n - 1;
+    showSlides();
+    // clearTimeout(autoSlide);
+    // autoSlide = setTimeout(showSlides, 6000);
+  }
+  
+  // let autoSlide = setTimeout(showSlides, 6000);
+  </script>
+  
+
+
+</style>
+
+<section class="section">
+  <div class="container is-max-desktop">
+  <!-- <div class="container"> -->
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-four-fifths"> -->
+      <div class="column is-full-width">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The diffusion model has been proven a powerful generative model in recent years, yet remains a challenge in generating visual text. Several methods alleviated this issue by incorporating explicit text position and content as guidance on where and what text to render. However, these methods still suffer from several drawbacks, such as limited flexibility and automation, constrained capability of layout prediction, and restricted style diversity. In this paper, we present TextDiffuser-2, aiming to unleash the power of language models for text rendering. Firstly, we fine-tune a large language model for layout planning. The large language model is capable of automatically generating keywords for text rendering and also supports layout modification through chatting. Secondly, we utilize the language model within the diffusion model to encode the position and texts at the line level. Unlike previous methods that employed tight character-level guidance, this approach generates more diverse text images. We conduct extensive experiments and incorporate user studies involving human participants as well as GPT-4V, validating TextDiffuser-2's capacity to achieve a more rational text layout and generation with enhanced diversity.
+          </p>
+    </div>
+
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <br />
+        <h2 class="title is-3">Motivation - Why TextDiffuser-2 is Needed? 🤷‍♂</h2>
+        <div class="content has-text-justified">
+          Although showing impressive rendering accuracy, we have noticed several drawbacks in existing text rendering methods:
+          <ul>
+            <li>(1) <b>Limited flexibility and automation</b>: GlyphControl needs users to design glyph images to provide layout guidance, while GlyphDraw and TextDiffuser rely on the manual specification of keywords. These requirements hinder the direct conversion of natural user prompts into corresponding images, thereby narrowing the flexibility and automation capabilities.</li>
+            <li>(2) <b>Constrained capability of layout prediction</b>: GlyphDraw can only render images with a single text line, constraining its applicability for scenarios involving multiple text lines. For TextDiffuser, the produced text layouts are not visually appealing, which is primarily attributed to the limited capability of the Layout Transformer.</li>
+            <li>(3) <b>Restricted style diversity</b>: For TextDiffuser, the utilization of character-level segmentation masks as control signals implicitly imposes constraints on the position of each character, thereby restricting the diversity of text styles and posing challenges when rendering handwritten or artistic fonts.</li>
+            <li>(4) <b>No open-source code</b>: Existing methods may not provide available code, API, or demo.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pipeline. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <br />
+        <h2 class="title is-3">TextDiffuser-2 Pipeline</h2>
+          <img src="./static/images/architecture.jpg" alt="pipeline1" style="width:100%; ">
+        <div class="content has-text-justified">
+          <p>
+            The architecture of TextDiffuser-2. The language model M1 and the diffusion model are trained in two stages. The language model M1 can convert the user prompt into a language-format layout and also allows users to specify keywords optionally. Further, the prompt and language-format layout is encoded with the trainable language model M2 within the diffusion model for generating images. M1 is trained via the cross-entropy loss in the first stage, while M2 and U-Net are trained using the denoising L2 loss in the second stage.
+          </p>
+        </div>
+      </div>
+
+    </div>
+<!-- 
+    <script
+    type="module"
+    src="https://gradio.s3-us-west-2.amazonaws.com/4.8.0/gradio.js"
+  ></script>
+  
+
+  <gradio-app src="https://jingyechen22-textdiffuser-2.hf.space" style="width: auto;"></gradio-app> -->
+  
+
+    <!-- Pipeline. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <br />
+        <h2 class="title is-3">Text-to-Image Visualizations</h2>
+        <img src="./static/images/t2i.jpg" alt="more_results_single" style="width:85%; ">
+        <div class="content has-text-justified">
+          <p>
+            Visualizations of text-to-image results compared with existing methods. TextDiffuser-2 can automatically extract keywords from
+            prompts for accurate rendering. Additionally, the fonts generated by TextDiffuser-2 exhibit a wide range of diversity.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <br />
+        <h2 class="title is-3">Style Diversity</h2>
+        <img src="./static/images/diverse.jpg" alt="more_results_single" style="width:100%; ">
+        <div class="content has-text-justified">
+          <p>
+            Visualization of diversity in generating multiple images under the same prompt. TextDiffuser-2 is capable of generating more
+artistic fonts, with increased diversity in the positioning of characters and the inclination angle of text lines.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <br />
+        <h2 class="title is-3">Inpainting Ability</h2>
+        <img src="./static/images/inpaint.jpg" alt="more_results_single" style="width:100%; ">
+        <div class="content has-text-justified">
+          <p>
+            Visualizations of the text inpainting task compared with TextDiffuser. TextDiffuser-2 can generate more coherent text.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <br />
+        <h2 class="title is-3">Quantitative Result</h2>
+        <img src="./static/images/quanti.jpg" alt="more_results_single" style="width:100%; ">
+        <div class="content has-text-justified">
+          <p>
+            Demonstration of the quantitative results and user studies. We also incorporate GPT-4V into the user studies. The best and
+second-best results are indicated in bold and underlined formats. TextDiffuser-2 achieves the best results under the majority of metrics.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Contact</h2>
+    For help or issues using TextDiffuser-2, please email Jingye Chen <a rel="license" href="mailto:qwerty.chen@connect.ust.hk">(qwerty.chen@connect.ust.hk)</a>
+    , Yupan Huang <a rel="license" href="mailto:huangyp28@mail2.sysu.edu.cn">(huangyp28@mail2.sysu.edu.cn)</a> or submit a GitHub issue. For other communications related to TextDiffuser-2, please contact Lei Cui <a rel="license" href="mailto:lecu@microsoft.com">(lecu@microsoft.com)</a> or Furu Wei <a rel="license" href="mailto:fuwei@microsoft.com">(fuwei@microsoft.com)</a>.
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{chen2023textdiffuser,
+      title={TextDiffuser-2: Unleashing the Power of Language Models for Text Rendering},
+      author={Chen, Jingye and Huang, Yupan and Lv, Tengchao and Cui, Lei and Chen, Qifeng and Wei, Furu},
+      journal={arXiv preprint arXiv:2311.16465},
+      year={2023}
+    }
+    
+</code></pre>
+  </div>
+</section>
+
+
+
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
