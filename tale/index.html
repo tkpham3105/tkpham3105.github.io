@@ -49,7 +49,10 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
+          <div class="myHeading">
+          <img src="./static/images/tale_logo.png" />
           <h1 class="title is-1 publication-title">TALE: Training-free Cross-domain Image Composition via Adaptive Latent Manipulation and Energy-guided Optimization</h1>
+          </div>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://tkpham.github.io/">Kien T. Pham</a><sup>1</sup>,</span>
@@ -217,9 +220,9 @@ with template images, as well as conducting text inpainting to reconstruct incom
         <!-- <iframe src="./static/images/qualitative.pdf" style="width: 100%;height: 100%;border: none;"></iframe> -->
         <div text-align:center>
           <p class="center">
-            Qualitative comparison of TALE with prior SOTA and concurrent works in cross-domain image-guided composition.
+            <caption>Qualitative comparison of TALE with prior SOTA and concurrent works in cross-domain image-guided composition.
             From top to bottom are representative results for compositing between real and watercolor, oil painting, comic, photorealism,
-            sketching, and cartoon animation domains.
+            sketching, and cartoon animation domains.</caption>
           </p>
         </div>
 
@@ -229,9 +232,9 @@ with template images, as well as conducting text inpainting to reconstruct incom
         <img src="./static/images/quantitative_crossdomain.png" alt="results_quantitative_cross" style="width:100%; ">
         <div text-align:center>
           <p class="center">
-            Qualitative comparison of TALE with prior SOTA and concurrent works in cross-domain image-guided composition.
-            From top to bottom are representative results for compositing between real and watercolor, oil painting, comic, photorealism,
-            sketching, and cartoon animation domains.
+            <caption>Quantitative comparison of TALE with prior SOTA works in cross-domain composition on the baseline benchmark
+            with sketching, oil painting, and cartoon animation domains, and on the extended benchmark containing mixture of other
+            domains such as comic and watercolor painting.</caption>
           </p>
         </div>
 
@@ -241,11 +244,13 @@ with template images, as well as conducting text inpainting to reconstruct incom
         <div class="row">
           <div class="column">
             <img src="./static/images/quantitative_samedomain.png" alt="results_quantitative_same" style="width:100%">
-            <caption>Monthly savings</caption>
+            <caption>Quantitative performance achieved by different
+            methods for photorealism same-domain composition. Our results are shown in <strong>bold</strong>,
+            the best and second-best results are in <font color="red">red</font> and <font color="blue">blue</font>.</caption>
           </div>
           <div class="column">
             <img src="./static/images/userstudy.png" alt="results_userstudy" style="width:100%">
-            <caption>Monthly savings</caption>
+            <caption>User preference of TALE over prior works.</caption>
           </div>
         </div>
 
