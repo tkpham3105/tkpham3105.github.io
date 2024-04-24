@@ -82,10 +82,6 @@ body {
   display: inline-block;
 }
 
-.side-by-side-img {
-  display: inline-block;
-}
-
 .publication-banner img {
 }
 
@@ -158,4 +154,13 @@ body {
 }
 #interpolation-image-wrapper img {
   border-radius: 5px;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  padding: 5px;
 }
