@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="SpA2V: Harnessing Spatial Auditory Cues for Audio-driven Spatially-aware Video Generation">
+  <meta name="keywords" content="SpA2V, Audio-to-Video, Spatial Auditory Cues, Spatially-aware">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpA2V: Harnessing Spatial Auditory Cues for Audio-driven Spatially-aware Video Generation</title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">SpA2V: Harnessing Spatial Auditory Cues for Audio-driven Spatially-aware Video Generation</h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://tkpham3105.github.io/">Kien T. Pham</a>,</span>
+            <span class="author-block">
+              <a href="https://yingqinghe.github.io/">Yingqing He</a>,</span>
+            <span class="author-block">
+              <a href="https://yzxing87.github.io/">Yazhou Xing</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://cqf.io/">Qifeng Chen</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://zjuchenlong.github.io/">Long Chen</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">HKUST</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://dl.acm.org/doi/10.1145/3746027.3755705"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2508.00782"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <!-- <a href="https://github.com/jibin86/syncphony" -->                 
+                <a href="https://tkpham3105.github.io/spa2v/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (soon)</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" controls playsinline height="100%">
+            <source src="./static/videos/results/sample1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-steve">
+          <video poster="" id="steve" controls playsinline height="100%">
+            <source src="./static/videos/results/sample2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-steve">
+          <video poster="" id="steve" controls playsinline height="100%">
+            <source src="./static/videos/results/sample3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-steve">
+          <video poster="" id="steve" controls playsinline height="100%">
+            <source src="./static/videos/results/sample4.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-steve">
+          <video poster="" id="steve" controls playsinline height="100%">
+            <source src="./static/videos/results/sample5.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-steve">
+          <video poster="" id="steve" controls playsinline height="100%">
+            <source src="./static/videos/results/sample6.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-steve">
+          <video poster="" id="steve" controls playsinline height="100%">
+            <source src="./static/videos/results/sample7.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-steve">
+          <video poster="" id="steve" controls playsinline height="100%">
+            <source src="./static/videos/results/sample8.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-steve">
+          <video poster="" id="steve" controls playsinline height="100%">
+            <source src="./static/videos/results/sample9.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-steve">
+          <video poster="" id="steve" controls playsinline height="100%">
+            <source src="./static/videos/results/sample10.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-steve">
+          <video poster="" id="steve" controls playsinline height="100%">
+            <source src="./static/videos/results/sample11.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-steve">
+          <video poster="" id="steve" controls playsinline height="100%">
+            <source src="./static/videos/results/sample12.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Audio-driven video generation aims to synthesize realistic videos that align with input audio recordings, akin to the human ability to visualize scenes from auditory input. However, existing approaches predominantly focus on exploring semantic information, such as the classes of sounding sources present in the audio, limiting their ability to generate videos with accurate content and spatial composition. In contrast, we humans can not only naturally identify the semantic categories of sounding sources but also determine their deeply encoded spatial attributes, including locations and movement directions. This useful information can be elucidated by considering specific spatial indicators derived from the inherent physical properties of sound, such as loudness or frequency. As prior methods largely ignore this factor, we present <strong><em>SpA2V</em></strong>, the first framework explicitly exploits these spatial auditory cues from audios to generate videos with high semantic and spatial correspondence. SpA2V decomposes the generation process into two stages: <strong>(1) <em>Audio-guided Video Planning:</em></strong> We meticulously adapt a state-of-the-art MLLM for a novel task of harnessing spatial and semantic cues from input audio to construct Video Scene Layouts (VSLs). This serves as an intermediate representation to bridge the gap between the audio and video modalities; <strong>(2) <em>Layout-grounded Video Generation:</em></strong> We develop an efficient and effective approach to seamlessly integrate VSLs as conditional guidance into pre-trained diffusion models, enabling VSL-grounded video generation in a training-free manner. Extensive experiments demonstrate that SpA2V excels in generating realistic videos with semantic and spatial alignment to the input audios.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">SpA2V Framework</h2>
+        <div class="content has-text-justified">
+          <img src="./static/images/pipeline.png" style="margin-bottom: 10px;">
+          <caption>
+            SpA2V decomposes the generation process into two stages: <strong><em>Audio-guided Video Planning</em></strong> and <strong><em>Layout-grounded Video Generation</em></strong>. In the first stage, given an input audio, example conversations are retrieved from candidate database via Retrieval Module. They together with a System Instruction and the audio are fed into the MLLM Video Planner to perform reasoning and generate a desired Video Scene Layout (VSL) sequence with respective global video-wise and local frame-wise captions. In the second stage, they are incorporated to guide a video diffusion model to generate the final video that is semantically and spatially coherent with the input audio.
+          </caption>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section has-text-centered">
+  <div class="container is-max-desktop" id="comparison">
+    <h2 class="title is-3">AVLBench Construction</h2>
+
+    <div class="content has-text-justified">
+      <p>
+        Due to the novelty of our <strong><em>Audio → Video Scene Layout → Video</strong></em> approach, we construct a new benchmark dubbed <strong><em>AVLBench</strong></em> for conducting experiments and evaluations.
+      </p>
+    </div>
+
+    <div class="content has-text-justified">
+      <img src="./static/images/benchmark.png" style="margin-bottom: 10px;">
+      <caption>
+        The building process involves 4 steps: <em>Sourcing</em> to crawl potential data, <em>Filtering</em> to select data with quality control, <em>Augmenting</em> to enrich data diversity, and <em>Annotating</em> to produce annotations for final data. Eventually, we obtain <strong>7.2K</strong> real-world stereo audio-video pairs with <strong>14.5K</strong> annotated sounding objects, covering several distinct scenarios.
+      </caption>
+    </div>
+  </div>
+</section>
+
+
+<section class="section has-text-centered">
+  <div class="container is-max-desktop" id="shifted">
+    <h2 class="title is-3">Qualitative Comparison</h2>
+
+    <div class="content has-text-justified">
+      <caption>
+        System-wise qualitative comparison of videos generated by SpA2V, TempoTokens, Seeing-and-Hearing, AC+LTX, and AC+LVD. Our method can synthesize high-quality videos with compelling semantic and spatial correspondence to input audios across different scenarios.
+      </caption>
+    </div>
+
+    <div class="columns is-vcentered interpolation-panel">
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <video id="dollyzoom" controls playsinline height="100%">
+            <source src="./static/videos/comparison/sample1.mp4"
+                    type="video/mp4">
+        </div>
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <video id="dollyzoom" controls playsinline height="100%">
+            <source src="./static/videos/comparison/sample2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-vcentered interpolation-panel">
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <video id="dollyzoom" controls playsinline height="100%">
+            <source src="./static/videos/comparison/sample3.mp4"
+                    type="video/mp4">
+        </div>
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <video id="dollyzoom" controls playsinline height="100%">
+            <source src="./static/videos/comparison/sample4.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div class="content has-text-centered">
+      <p>
+        Vehicles with translational movements in outdoor environments.
+      </p>
+    </div>
+
+    <div class="columns is-vcentered interpolation-panel">
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <video id="dollyzoom" controls playsinline height="100%">
+            <source src="./static/videos/comparison/sample5.mp4"
+                    type="video/mp4">
+        </div>
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <video id="dollyzoom" controls playsinline height="100%">
+            <source src="./static/videos/comparison/sample6.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-vcentered interpolation-panel">
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <video id="dollyzoom" controls playsinline height="100%">
+            <source src="./static/videos/comparison/sample7.mp4"
+                    type="video/mp4">
+        </div>
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <video id="dollyzoom" controls playsinline height="100%">
+            <source src="./static/videos/comparison/sample8.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div class="content has-text-centered">
+      <p>
+        Instruments being played with stationary motions in indoor environments.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section has-text-centered">
+  <div class="container is-max-desktop" id="comparison">
+    <h2 class="title is-3">Quantitative Evaluation</h2>
+
+    <div class="content has-text-justified">
+      <p>
+        Stage-by-stage quantitative comparison of SpA2V and aforementioned baselines together with ablation studies in <strong><em> Audio-driven Video Planning</em></strong> and <strong><em>Layout-grounded Video Generation</em></strong> respectively.
+      </p>
+    </div>
+
+    <div class="content has-text-justified">
+      <img src="./static/images/quantitative_stage1.png" style="margin-bottom: 10px;">
+      <caption>
+        In Stage 1, <span style="background-color: #C0BFFF;">SpA2V</span> outperforms the baseline AC+LVD and generates VSLs with high similarity to the ground-truth VSLs, indicating strong spatial alignments to the input audios. Additionally, we conduct ablation for this stage on the <span style="background-color: #FABFBE;">Prompting Mechanism Component</span>, <span style="background-color: #FEFBC9;">In-context Learning Setup</span>, <span style="background-color: #C5FFBC;">Example Selection</span>, <span style="background-color: #EBBFCF;">Choices of MLLM</span>, and <span style="background-color: #DFDFDF;">Response Randomness Factor</span> for choosing the best setting in practice.
+
+      </caption>
+    </div>
+
+    <div class="content has-text-justified">
+      <img src="./static/images/quantitative_stage2.png" style="margin-bottom: 10px;">
+      <caption>
+        In Stage 2, <span style="background-color: #FEEFEF;">SpA2V</span> consistently surpasses AC+LVD in synthesizing videos grounded by input layouts, and outperforms other baselines including TempoTokens, Seeing-and-Hearing, and AC+LTX in system-level audio-to-video comparison. Besides, we also assess the effectiveness of different <span style="background-color: #BEE5FB;">Caption Selection</span> strategies and the impact of <span style="background-color: #EDDFCE;">VSL Quality</span> toward the final outcomes. 
+      </caption>
+    </div>
+  </div>
+</section>
+
+<section class="section has-text-centered">
+  <div class="container is-max-desktop" id="comparison">
+    <h2 class="title is-3">User Study</h2>
+
+    <div class="content has-text-justified">
+      <p>
+        Ranking scores in user study highlight the subjective preference of users for the videos generated by SpA2V over the other baselines in Visual Quality and Audio-Video Alignment.
+      </p>
+    </div>
+
+    <div class="content has-text-justified">
+      <img src="./static/images/userstudy.png" style="margin-bottom: 10px;">
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{pham2025spa2v,
+  title={SpA2V: Harnessing Spatial Auditory Cues for Audio-driven Spatially-aware Video Generation},
+  author={Pham, Kien T and He, Yingqing and Xing, Yazhou and Chen, Qifeng and Chen, Long},
+  journal={arXiv preprint arXiv:2508.00782},
+  year={2025}
+}
+</code></pre>
+  </div>
+</section>
+
+
+<!-- <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=WjTeRKnySBMHbByEqHXcqcW616fhmyypK409PsJirKo&cl=ffffff&w=a"></script> -->
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Project page template is borrowed from <a href="https://nerfies.github.io/">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
