@@ -1,1581 +1,1321 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to TK's Homepage">
-
-    <title>Kien T. Pham (TK) - Homepage</title>
-
-    <link rel="stylesheet" href="./TK Pham - Homepage_files/bootstrap.min.css">
-    <link rel="stylesheet" href="./TK Pham - Homepage_files/all.min.css">
-    <link rel="stylesheet" href="./TK Pham - Homepage_files/academicons.min.css">
-    <link rel="stylesheet" href="./TK Pham - Homepage_files/charts.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link id="theme-style" rel="stylesheet" href="./TK Pham - Homepage_files/main.css">
-
-    <link rel="icon" type="image/png" href="./TK Pham - Homepage_files/images/gitava.png">
-
-    <script type="module" src="./TK Pham - Homepage_files/background_star.js.下载"></script>
-
-    <style type="text/css">
-        .dg ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            clear: both
-        }
-
-        .dg.ac {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 0;
-            z-index: 0
-        }
-
-        .dg:not(.ac) .main {
-            overflow: hidden
-        }
-
-        .dg.main {
-            -webkit-transition: opacity .1s linear;
-            -o-transition: opacity .1s linear;
-            -moz-transition: opacity .1s linear;
-            transition: opacity .1s linear
-        }
-
-        .dg.main.taller-than-window {
-            overflow-y: auto
-        }
-
-        .dg.main.taller-than-window .close-button {
-            opacity: 1;
-            margin-top: -1px;
-            border-top: 1px solid #2c2c2c
-        }
-
-        .dg.main ul.closed .close-button {
-            opacity: 1 !important
-        }
-
-        .dg.main:hover .close-button,
-        .dg.main .close-button.drag {
-            opacity: 1
-        }
-
-        .dg.main .close-button {
-            -webkit-transition: opacity .1s linear;
-            -o-transition: opacity .1s linear;
-            -moz-transition: opacity .1s linear;
-            transition: opacity .1s linear;
-            border: 0;
-            line-height: 19px;
-            height: 20px;
-            cursor: pointer;
-            text-align: center;
-            background-color: #000
-        }
-
-        .dg.main .close-button.close-top {
-            position: relative
-        }
-
-        .dg.main .close-button.close-bottom {
-            position: absolute
-        }
-
-        .dg.main .close-button:hover {
-            background-color: #111
-        }
-
-        .dg.a {
-            float: right;
-            margin-right: 15px;
-            overflow-y: visible
-        }
-
-        .dg.a.has-save>ul.close-top {
-            margin-top: 0
-        }
-
-        .dg.a.has-save>ul.close-bottom {
-            margin-top: 27px
-        }
-
-        .dg.a.has-save>ul.closed {
-            margin-top: 0
-        }
-
-        .dg.a .save-row {
-            top: 0;
-            z-index: 1002
-        }
-
-        .dg.a .save-row.close-top {
-            position: relative
-        }
-
-        .dg.a .save-row.close-bottom {
-            position: fixed
-        }
-
-        .dg li {
-            -webkit-transition: height .1s ease-out;
-            -o-transition: height .1s ease-out;
-            -moz-transition: height .1s ease-out;
-            transition: height .1s ease-out;
-            -webkit-transition: overflow .1s linear;
-            -o-transition: overflow .1s linear;
-            -moz-transition: overflow .1s linear;
-            transition: overflow .1s linear
-        }
-
-        .dg li:not(.folder) {
-            cursor: auto;
-            height: 27px;
-            line-height: 27px;
-            padding: 0 4px 0 5px
-        }
-
-        .dg li.folder {
-            padding: 0;
-            border-left: 4px solid rgba(0, 0, 0, 0)
-        }
-
-        .dg li.title {
-            cursor: pointer;
-            margin-left: -4px
-        }
-
-        .dg .closed li:not(.title),
-        .dg .closed ul li,
-        .dg .closed ul li>* {
-            height: 0;
-            overflow: hidden;
-            border: 0
-        }
-
-        .dg .cr {
-            clear: both;
-            padding-left: 3px;
-            height: 27px;
-            overflow: hidden
-        }
-
-        .dg .property-name {
-            cursor: default;
-            float: left;
-            clear: left;
-            width: 40%;
-            overflow: hidden;
-            text-overflow: ellipsis
-        }
-
-        .dg .c {
-            float: left;
-            width: 60%;
-            position: relative
-        }
-
-        .dg .c input[type=text] {
-            border: 0;
-            margin-top: 4px;
-            padding: 3px;
-            width: 100%;
-            float: right
-        }
-
-        .dg .has-slider input[type=text] {
-            width: 30%;
-            margin-left: 0
-        }
-
-        .dg .slider {
-            float: left;
-            width: 66%;
-            margin-left: -5px;
-            margin-right: 0;
-            height: 19px;
-            margin-top: 4px
-        }
-
-        .dg .slider-fg {
-            height: 100%
-        }
-
-        .dg .c input[type=checkbox] {
-            margin-top: 7px
-        }
-
-        .dg .c select {
-            margin-top: 5px
-        }
-
-        .dg .cr.function,
-        .dg .cr.function .property-name,
-        .dg .cr.function *,
-        .dg .cr.boolean,
-        .dg .cr.boolean * {
-            cursor: pointer
-        }
-
-        .dg .cr.color {
-            overflow: visible
-        }
-
-        .dg .selector {
-            display: none;
-            position: absolute;
-            margin-left: -9px;
-            margin-top: 23px;
-            z-index: 10
-        }
-
-        .dg .c:hover .selector,
-        .dg .selector.drag {
-            display: block
-        }
-
-        .dg li.save-row {
-            padding: 0
-        }
-
-        .dg li.save-row .button {
-            display: inline-block;
-            padding: 0px 6px
-        }
-
-        .dg.dialogue {
-            background-color: #222;
-            width: 460px;
-            padding: 15px;
-            font-size: 13px;
-            line-height: 15px
-        }
-
-        #dg-new-constructor {
-            padding: 10px;
-            color: #222;
-            font-family: Monaco, monospace;
-            font-size: 10px;
-            border: 0;
-            resize: none;
-            box-shadow: inset 1px 1px 1px #888;
-            word-wrap: break-word;
-            margin: 12px 0;
-            display: block;
-            width: 440px;
-            overflow-y: scroll;
-            height: 100px;
-            position: relative
-        }
-
-        #dg-local-explain {
-            display: none;
-            font-size: 11px;
-            line-height: 17px;
-            border-radius: 3px;
-            background-color: #333;
-            padding: 8px;
-            margin-top: 10px
-        }
-
-        #dg-local-explain code {
-            font-size: 10px
-        }
-
-        #dat-gui-save-locally {
-            display: none
-        }
-
-        .dg {
-            color: #eee;
-            font: 11px 'Lucida Grande', sans-serif;
-            text-shadow: 0 -1px 0 #111
-        }
-
-        .dg.main::-webkit-scrollbar {
-            width: 5px;
-            background: #1a1a1a
-        }
-
-        .dg.main::-webkit-scrollbar-corner {
-            height: 0;
-            display: none
-        }
-
-        .dg.main::-webkit-scrollbar-thumb {
-            border-radius: 5px;
-            background: #676767
-        }
-
-        .dg li:not(.folder) {
-            background: #1a1a1a;
-            border-bottom: 1px solid #2c2c2c
-        }
-
-        .dg li.save-row {
-            line-height: 25px;
-            background: #dad5cb;
-            border: 0
-        }
-
-        .dg li.save-row select {
-            margin-left: 5px;
-            width: 108px
-        }
-
-        .dg li.save-row .button {
-            margin-left: 5px;
-            margin-top: 1px;
-            border-radius: 2px;
-            font-size: 9px;
-            line-height: 7px;
-            padding: 4px 4px 5px 4px;
-            background: #c5bdad;
-            color: #fff;
-            text-shadow: 0 1px 0 #b0a58f;
-            box-shadow: 0 -1px 0 #b0a58f;
-            cursor: pointer
-        }
-
-        .dg li.save-row .button.gears {
-            background: #c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;
-            height: 7px;
-            width: 8px
-        }
-
-        .dg li.save-row .button:hover {
-            background-color: #bab19e;
-            box-shadow: 0 -1px 0 #b0a58f
-        }
-
-        .dg li.folder {
-            border-bottom: 0
-        }
-
-        .dg li.title {
-            padding-left: 16px;
-            background: #000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;
-            cursor: pointer;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2)
-        }
-
-        .dg .closed li.title {
-            background-image: url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)
-        }
-
-        .dg .cr.boolean {
-            border-left: 3px solid #806787
-        }
-
-        .dg .cr.color {
-            border-left: 3px solid
-        }
-
-        .dg .cr.function {
-            border-left: 3px solid #e61d5f
-        }
-
-        .dg .cr.number {
-            border-left: 3px solid #2FA1D6
-        }
-
-        .dg .cr.number input[type=text] {
-            color: #2FA1D6
-        }
-
-        .dg .cr.string {
-            border-left: 3px solid #1ed36f
-        }
-
-        .dg .cr.string input[type=text] {
-            color: #1ed36f
-        }
-
-        .dg .cr.function:hover,
-        .dg .cr.boolean:hover {
-            background: #111
-        }
-
-        .dg .c input[type=text] {
-            background: #303030;
-            outline: none
-        }
-
-        .dg .c input[type=text]:hover {
-            background: #3c3c3c
-        }
-
-        .dg .c input[type=text]:focus {
-            background: #494949;
-            color: #fff
-        }
-
-        .dg .c .slider {
-            background: #303030;
-            cursor: ew-resize
-        }
-
-        .dg .c .slider-fg {
-            background: #2FA1D6;
-            max-width: 100%
-        }
-
-        .dg .c .slider:hover {
-            background: #3c3c3c
-        }
-
-        .dg .c .slider:hover .slider-fg {
-            background: #44abda
-        }
-    </style>
-    <style type="text/css">
-        .dg ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            clear: both
-        }
-
-        .dg.ac {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 0;
-            z-index: 0
-        }
-
-        .dg:not(.ac) .main {
-            overflow: hidden
-        }
-
-        .dg.main {
-            -webkit-transition: opacity .1s linear;
-            -o-transition: opacity .1s linear;
-            -moz-transition: opacity .1s linear;
-            transition: opacity .1s linear
-        }
-
-        .dg.main.taller-than-window {
-            overflow-y: auto
-        }
-
-        .dg.main.taller-than-window .close-button {
-            opacity: 1;
-            margin-top: -1px;
-            border-top: 1px solid #2c2c2c
-        }
-
-        .dg.main ul.closed .close-button {
-            opacity: 1 !important
-        }
-
-        .dg.main:hover .close-button,
-        .dg.main .close-button.drag {
-            opacity: 1
-        }
-
-        .dg.main .close-button {
-            -webkit-transition: opacity .1s linear;
-            -o-transition: opacity .1s linear;
-            -moz-transition: opacity .1s linear;
-            transition: opacity .1s linear;
-            border: 0;
-            line-height: 19px;
-            height: 20px;
-            cursor: pointer;
-            text-align: center;
-            background-color: #000
-        }
-
-        .dg.main .close-button.close-top {
-            position: relative
-        }
-
-        .dg.main .close-button.close-bottom {
-            position: absolute
-        }
-
-        .dg.main .close-button:hover {
-            background-color: #111
-        }
-
-        .dg.a {
-            float: right;
-            margin-right: 15px;
-            overflow-y: visible
-        }
-
-        .dg.a.has-save>ul.close-top {
-            margin-top: 0
-        }
-
-        .dg.a.has-save>ul.close-bottom {
-            margin-top: 27px
-        }
-
-        .dg.a.has-save>ul.closed {
-            margin-top: 0
-        }
-
-        .dg.a .save-row {
-            top: 0;
-            z-index: 1002
-        }
-
-        .dg.a .save-row.close-top {
-            position: relative
-        }
-
-        .dg.a .save-row.close-bottom {
-            position: fixed
-        }
-
-        .dg li {
-            -webkit-transition: height .1s ease-out;
-            -o-transition: height .1s ease-out;
-            -moz-transition: height .1s ease-out;
-            transition: height .1s ease-out;
-            -webkit-transition: overflow .1s linear;
-            -o-transition: overflow .1s linear;
-            -moz-transition: overflow .1s linear;
-            transition: overflow .1s linear
-        }
-
-        .dg li:not(.folder) {
-            cursor: auto;
-            height: 27px;
-            line-height: 27px;
-            padding: 0 4px 0 5px
-        }
-
-        .dg li.folder {
-            padding: 0;
-            border-left: 4px solid rgba(0, 0, 0, 0)
-        }
-
-        .dg li.title {
-            cursor: pointer;
-            margin-left: -4px
-        }
-
-        .dg .closed li:not(.title),
-        .dg .closed ul li,
-        .dg .closed ul li>* {
-            height: 0;
-            overflow: hidden;
-            border: 0
-        }
-
-        .dg .cr {
-            clear: both;
-            padding-left: 3px;
-            height: 27px;
-            overflow: hidden
-        }
-
-        .dg .property-name {
-            cursor: default;
-            float: left;
-            clear: left;
-            width: 40%;
-            overflow: hidden;
-            text-overflow: ellipsis
-        }
-
-        .dg .c {
-            float: left;
-            width: 60%;
-            position: relative
-        }
-
-        .dg .c input[type=text] {
-            border: 0;
-            margin-top: 4px;
-            padding: 3px;
-            width: 100%;
-            float: right
-        }
-
-        .dg .has-slider input[type=text] {
-            width: 30%;
-            margin-left: 0
-        }
-
-        .dg .slider {
-            float: left;
-            width: 66%;
-            margin-left: -5px;
-            margin-right: 0;
-            height: 19px;
-            margin-top: 4px
-        }
-
-        .dg .slider-fg {
-            height: 100%
-        }
-
-        .dg .c input[type=checkbox] {
-            margin-top: 7px
-        }
-
-        .dg .c select {
-            margin-top: 5px
-        }
-
-        .dg .cr.function,
-        .dg .cr.function .property-name,
-        .dg .cr.function *,
-        .dg .cr.boolean,
-        .dg .cr.boolean * {
-            cursor: pointer
-        }
-
-        .dg .cr.color {
-            overflow: visible
-        }
-
-        .dg .selector {
-            display: none;
-            position: absolute;
-            margin-left: -9px;
-            margin-top: 23px;
-            z-index: 10
-        }
-
-        .dg .c:hover .selector,
-        .dg .selector.drag {
-            display: block
-        }
-
-        .dg li.save-row {
-            padding: 0
-        }
-
-        .dg li.save-row .button {
-            display: inline-block;
-            padding: 0px 6px
-        }
-
-        .dg.dialogue {
-            background-color: #222;
-            width: 460px;
-            padding: 15px;
-            font-size: 13px;
-            line-height: 15px
-        }
-
-        #dg-new-constructor {
-            padding: 10px;
-            color: #222;
-            font-family: Monaco, monospace;
-            font-size: 10px;
-            border: 0;
-            resize: none;
-            box-shadow: inset 1px 1px 1px #888;
-            word-wrap: break-word;
-            margin: 12px 0;
-            display: block;
-            width: 440px;
-            overflow-y: scroll;
-            height: 100px;
-            position: relative
-        }
-
-        #dg-local-explain {
-            display: none;
-            font-size: 11px;
-            line-height: 17px;
-            border-radius: 3px;
-            background-color: #333;
-            padding: 8px;
-            margin-top: 10px
-        }
-
-        #dg-local-explain code {
-            font-size: 10px
-        }
-
-        #dat-gui-save-locally {
-            display: none
-        }
-
-        .dg {
-            color: #eee;
-            font: 11px 'Lucida Grande', sans-serif;
-            text-shadow: 0 -1px 0 #111
-        }
-
-        .dg.main::-webkit-scrollbar {
-            width: 5px;
-            background: #1a1a1a
-        }
-
-        .dg.main::-webkit-scrollbar-corner {
-            height: 0;
-            display: none
-        }
-
-        .dg.main::-webkit-scrollbar-thumb {
-            border-radius: 5px;
-            background: #676767
-        }
-
-        .dg li:not(.folder) {
-            background: #1a1a1a;
-            border-bottom: 1px solid #2c2c2c
-        }
-
-        .dg li.save-row {
-            line-height: 25px;
-            background: #dad5cb;
-            border: 0
-        }
-
-        .dg li.save-row select {
-            margin-left: 5px;
-            width: 108px
-        }
-
-        .dg li.save-row .button {
-            margin-left: 5px;
-            margin-top: 1px;
-            border-radius: 2px;
-            font-size: 9px;
-            line-height: 7px;
-            padding: 4px 4px 5px 4px;
-            background: #c5bdad;
-            color: #fff;
-            text-shadow: 0 1px 0 #b0a58f;
-            box-shadow: 0 -1px 0 #b0a58f;
-            cursor: pointer
-        }
-
-        .dg li.save-row .button.gears {
-            background: #c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;
-            height: 7px;
-            width: 8px
-        }
-
-        .dg li.save-row .button:hover {
-            background-color: #bab19e;
-            box-shadow: 0 -1px 0 #b0a58f
-        }
-
-        .dg li.folder {
-            border-bottom: 0
-        }
-
-        .dg li.title {
-            padding-left: 16px;
-            background: #000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;
-            cursor: pointer;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2)
-        }
-
-        .dg .closed li.title {
-            background-image: url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)
-        }
-
-        .dg .cr.boolean {
-            border-left: 3px solid #806787
-        }
-
-        .dg .cr.color {
-            border-left: 3px solid
-        }
-
-        .dg .cr.function {
-            border-left: 3px solid #e61d5f
-        }
-
-        .dg .cr.number {
-            border-left: 3px solid #2FA1D6
-        }
-
-        .dg .cr.number input[type=text] {
-            color: #2FA1D6
-        }
-
-        .dg .cr.string {
-            border-left: 3px solid #1ed36f
-        }
-
-        .dg .cr.string input[type=text] {
-            color: #1ed36f
-        }
-
-        .dg .cr.function:hover,
-        .dg .cr.boolean:hover {
-            background: #111
-        }
-
-        .dg .c input[type=text] {
-            background: #303030;
-            outline: none
-        }
-
-        .dg .c input[type=text]:hover {
-            background: #3c3c3c
-        }
-
-        .dg .c input[type=text]:focus {
-            background: #494949;
-            color: #fff
-        }
-
-        .dg .c .slider {
-            background: #303030;
-            cursor: ew-resize
-        }
-
-        .dg .c .slider-fg {
-            background: #2FA1D6;
-            max-width: 100%
-        }
-
-        .dg .c .slider:hover {
-            background: #3c3c3c
-        }
-
-        .dg .c .slider:hover .slider-fg {
-            background: #44abda
-        }
-    </style>
-    <style>
-        .crx_bdwk_down_wrap {
-            top: 70%;
-            left: 0;
-            position: fixed;
-            z-index: 99999999;
-            color: #fff;
-            user-select: none;
-        }
-
-        .crx_bdwk_down_wrap .crx_bdwk_down_loading {
-            background-color: #666;
-            cursor: wait;
-            width: 126px;
-            text-align: center;
-            padding: 16px 0;
-        }
-
-        .crx_bdwk_down_wrap .crx_bdwk_down_loading p {
-            font-size: 14px;
-        }
-
-        .crx_bdwk_down_wrap .crx_bdwk_down_loading small {
-            font-size: 10px;
-        }
-
-        .crx_bdwk_down_wrap .crx_bdwk_down_btn {
-            width: 126px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 14px;
-            background-color: #dd5a57;
-            position: relative;
-        }
-
-        .crx_bdwk_down_wrap .crx_bdwk_down_types {
-            display: flex;
-            text-align: center;
-            align-items: center;
-            background-color: #666;
-            font-size: 12px;
-        }
-
-        .crx_bdwk_down_wrap .crx_bdwk_down_types div {
-            position: relative;
-        }
-
-        .crx_bdwk_down_wrap .crx_bdwk_down_types div:after {
-            content: ' ';
-            height: 12px;
-            width: 1px;
-            background-color: #eee;
-            position: absolute;
-            top: 10px;
-            right: 0;
-            transform: scaleX(0.5);
-        }
-
-        .crx_bdwk_down_wrap .crx_bdwk_down_types div:last-child:after {
-            display: none;
-        }
-
-        .crx_bdwk_down_wrap .crx_bdwk_down_types_check {
-            flex: 1;
-            color: #dd5a57;
-            padding: 8px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .crx_bdwk_down_wrap .crx_bdwk_down_types_uncheck {
-            flex: 1;
-            padding: 8px;
-            cursor: pointer;
-            color: #fff;
-            font-weight: lighter;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kien T. Pham (TK) – PhD Student at HKUST working on Audio-Video Generation and Understanding." />
+  <title>Kien T. Pham (TK) – Homepage</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+
+  <link rel="icon" type="image/png" href="./assets/images/gitava.png" />
+
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --primary: #c9a876;
+      --primary-light: #d4b896;
+      --primary-dark: #b89968;
+      --accent: #d4a574;
+      --accent2: #a68c6d;
+      --bg: #faf6f1;
+      --bg-card: #fffbf7;
+      --text: #3d3d3d;
+      --text-muted: #7a7a7a;
+      --text-light: #9a9a9a;
+      --border: #e8dfd5;
+      --border-light: #f4ede5;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow: 0 4px 16px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 40px rgba(0,0,0,0.10), 0 4px 12px rgba(0,0,0,0.06);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-lg: 20px;
+      --nav-height: 64px;
+      --max-width: 900px;
+    }
+
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    a { color: var(--primary); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--primary-dark); }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ===== PARTICLE CANVAS ===== */
+    #particle-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-height);
+      background: rgba(248, 250, 252, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: box-shadow 0.3s;
+    }
+    .navbar.scrolled { box-shadow: var(--shadow); }
+    .nav-inner {
+      width: 100%;
+      max-width: calc(var(--max-width) + 80px);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .nav-brand {
+      font-family: 'Comfortaa', cursive;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .nav-brand span { color: var(--primary); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { background: var(--primary); color: #fff; }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      width: 22px; height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ===== MAIN LAYOUT ===== */
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: calc(var(--nav-height) + 2.5rem) 2rem 4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ===== SECTION BASE ===== */
+    .section {
+      margin-bottom: 3.5rem;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .section.visible { opacity: 1; transform: translateY(0); }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .section-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .section-title {
+      font-family: 'Comfortaa', cursive;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 40px; height: 3px;
+      border-radius: 2px;
+    }
+
+    /* Section color themes */
+    .section-about .section-icon { background: #f5ede3; color: #c9a876; }
+    .section-about .section-title::after { background: #c9a876; }
+    .section-news .section-icon { background: #f0ede0; color: #a68c6d; }
+    .section-news .section-title::after { background: #a68c6d; }
+    .section-papers .section-icon { background: #f5ede3; color: #d4a574; }
+    .section-papers .section-title::after { background: #d4a574; }
+    .section-projects .section-icon { background: #f2e8dd; color: #b89968; }
+    .section-projects .section-title::after { background: #b89968; }
+    .section-edu .section-icon { background: #f5ede3; color: #c9a876; }
+    .section-edu .section-title::after { background: #c9a876; }
+    .section-industry .section-icon { background: #f2e8dd; color: #b89968; }
+    .section-industry .section-title::after { background: #b89968; }
+    .section-teaching .section-icon { background: #f0ede0; color: #a68c6d; }
+    .section-teaching .section-title::after { background: #a68c6d; }
+    .section-service .section-icon { background: #f5ede3; color: #d4a574; }
+    .section-service .section-title::after { background: #d4a574; }
+    .section-awards .section-icon { background: #f2e8dd; color: #b89968; }
+    .section-awards .section-title::after { background: #b89968; }
+
+    /* ===== HERO / INTRO ===== */
+    .hero {
+      display: flex;
+      align-items: flex-start;
+      gap: 2.5rem;
+      padding: 2.5rem;
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      margin-bottom: 3.5rem;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .hero.visible { opacity: 1; transform: translateY(0); }
+    .hero-avatar-wrap {
+      flex-shrink: 0;
+      position: relative;
+    }
+    .hero-avatar {
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ffffff;
+      box-shadow: 0 0 0 3px var(--primary), var(--shadow);
+      transition: transform 0.3s;
+    }
+    .hero-avatar:hover { transform: scale(1.04); }
+    .hero-avatar-badge {
+      position: absolute;
+      bottom: 6px; right: 6px;
+      width: 24px; height: 24px;
+      background: #22c55e;
+      border-radius: 50%;
+      border: 3px solid #ffffff;
+    }
+    .hero-body { flex: 1; min-width: 0; }
+    .hero-name {
+      font-family: 'Comfortaa', cursive;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+    }
+    .hero-title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .hero-title::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+      flex-shrink: 0;
+    }
+    .hero-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    .contact-item i { color: var(--primary); font-size: 0.85rem; }
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .hero-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 1rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1.5px solid transparent;
+    }
+    .hero-link.primary {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+    .hero-link.primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); color: #fff; }
+    .hero-link.outline {
+      background: transparent;
+      color: var(--text-muted);
+      border-color: var(--border);
+    }
+    .hero-link.outline:hover { border-color: var(--primary); color: var(--primary); background: #eff6ff; }
+
+    /* ===== ABOUT ===== */
+    .about-card {
+      background: #ffffff;
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+    .about-card p { margin-bottom: 0.9rem; color: var(--text); }
+    .about-card p:last-child { margin-bottom: 0; }
+    .about-card .collab-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #fef9c3;
+      border: 1px solid #fde047;
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      font-size: 0.875rem;
+      color: #854d0e;
+      font-weight: 500;
+      margin-top: 0.5rem;
+    }
+    .tag {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin: 0 1px;
+    }
+    .tag-blue { background: #dbeafe; color: #1d4ed8; }
+    .tag-purple { background: #ede9fe; color: #6d28d9; }
+    .tag-green { background: #dcfce7; color: #15803d; }
+
+    /* ===== NEWS ===== */
+    .news-list { display: flex; flex-direction: column; gap: 0.6rem; }
+    .news-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.9rem 1.1rem;
+      background: #ffffff;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .news-item:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+    .news-date {
+      flex-shrink: 0;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-light);
+      background: var(--border-light);
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+    .news-text { font-size: 0.9rem; color: var(--text); line-height: 1.5; }
+    .news-text a { font-weight: 600; }
+
+    /* ===== PAPERS ===== */
+    .paper-card {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1.25rem;
+      background: #ffffff;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1rem;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .paper-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .paper-thumb {
+      flex-shrink: 0;
+      width: 130px; height: 90px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
+    .paper-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .paper-card:hover .paper-thumb img { transform: scale(1.05); }
+    .paper-info { flex: 1; min-width: 0; }
+    .paper-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+      line-height: 1.4;
+    }
+    .paper-title a { color: var(--text); }
+    .paper-title a:hover { color: var(--primary); }
+    .paper-authors {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+    .paper-authors strong { color: var(--text); }
+    .paper-venue {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .paper-venue em { font-style: italic; }
+    .paper-venue strong { color: var(--accent2); }
+    .paper-award {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #b45309;
+      background: #fef3c7;
+      border: 1px solid #fde68a;
+      border-radius: 4px;
+      padding: 0.15rem 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .paper-links { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .paper-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 5px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: 1.5px solid var(--border);
+      color: var(--text-muted);
+      background: var(--bg-card);
+      transition: all 0.2s;
+    }
+    .paper-link:hover { border-color: var(--primary); color: var(--primary); background: #eff6ff; }
+    .paper-link.page { border-color: var(--primary); color: var(--primary); }
+    .paper-link.code { border-color: #16a34a; color: #16a34a; }
+    .paper-link.arxiv { border-color: #dc2626; color: #dc2626; }
+    .paper-link.pdf { border-color: #ea580c; color: #ea580c; }
+
+    .subsection-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-light);
+      margin: 1.5rem 0 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .subsection-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ===== TIMELINE (Education / Industry) ===== */
+    .timeline { position: relative; padding-left: 1.5rem; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px; bottom: 8px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--primary), var(--accent));
+      border-radius: 2px;
+    }
+    .timeline-item {
+      position: relative;
+      padding: 1.1rem 1.25rem;
+      background: #ffffff;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 0.75rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .timeline-item:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.75rem; top: 1.35rem;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 2px solid var(--bg-card);
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+    .timeline-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.6rem;
+    }
+    .timeline-org {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text);
+      flex: 1;
+      min-width: 150px;
+    }
+    .timeline-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      min-width: 200px;
+    }
+    .timeline-location {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .timeline-date {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--primary);
+      background: #eff6ff;
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .timeline-roles { display: flex; flex-direction: column; gap: 0.3rem; }
+    .timeline-role {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
+    .timeline-role::before {
+      content: '›';
+      color: var(--primary);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .timeline-mentor {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+    .timeline-mentor strong { color: var(--text); }
+    .timeline-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 6px;
+      object-fit: contain;
+      background: #f5f5f5;
+      padding: 4px;
+      flex-shrink: 0;
+    }
+    .timeline-item-with-logo {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .timeline-item-content {
+      flex: 1;
+    }
+
+    /* ===== TEACHING & SERVICES ===== */
+    .simple-card {
+      background: #ffffff;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 0.6rem;
+    }
+    .simple-card p { font-size: 0.9rem; color: var(--text); margin-bottom: 0.3rem; }
+    .simple-card p:last-child { margin-bottom: 0; }
+
+    /* ===== AWARDS ===== */
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.75rem;
+    }
+    .award-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.9rem 1rem;
+      background: #ffffff;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .award-item:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    .award-icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: #fffbeb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: #d97706;
+      flex-shrink: 0;
+    }
+    .award-name {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .award-date {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-top: 0.15rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.82rem;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+    footer a { color: var(--text-muted); }
+    footer a:hover { color: var(--primary); }
+
+    /* ===== BACK TO TOP ===== */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 999;
+      border: none;
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { background: var(--primary-dark); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 700px) {
+      main { padding: calc(var(--nav-height) + 1.5rem) 1rem 3rem; }
+      .hero { flex-direction: column; align-items: center; text-align: center; padding: 1.75rem 1.25rem; gap: 1.5rem; }
+      .hero-title { justify-content: center; }
+      .hero-contact { justify-content: center; }
+      .hero-links { justify-content: center; }
+      .hero-avatar { width: 110px; height: 110px; }
+      .hero-name { font-size: 1.6rem; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: var(--nav-height); left: 0; right: 0; background: rgba(248,250,252,0.98); border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; gap: 0.25rem; }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: flex; }
+      .paper-card { flex-direction: column; }
+      .paper-thumb { width: 100%; height: 160px; }
+      .awards-grid { grid-template-columns: 1fr; }
+      .timeline-header { flex-direction: column; gap: 0.25rem; }
+    }
+  </style>
 </head>
-
 <body>
 
+<!-- Particle background -->
+<canvas id="particle-canvas"></canvas>
 
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <div class="nav-brand">TK <span>Pham</span></div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#papers">Papers</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#industry">Industry</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#awards">Awards</a></li>
+    </ul>
+    <div class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
 
+<main>
 
-    <!-- <canvas id="bg"></canvas> -->
+  <!-- ===== HERO ===== -->
+  <div class="hero" id="hero">
+    <div class="hero-avatar-wrap">
+      <img
+        class="hero-avatar"
+        src="https://raw.githubusercontent.com/tkpham3105/tkpham3105.github.io/master/TK%20Pham%20-%20Homepage_files/images/tkpham_10292025.jpg"
+        alt="Kien T. Pham (TK)"
+        onerror="this.src='https://ui-avatars.com/api/?name=TK+Pham&size=140&background=2563eb&color=fff&bold=true&font-size=0.4'"
+      />
+      <div class="hero-avatar-badge" title="Open to collaboration"></div>
+    </div>
+    <div class="hero-body">
+      <h1 class="hero-name">Kien T. Pham <span style="color:var(--primary)">(TK)</span></h1>
+      <div class="hero-title">PhD Student @ HKUST</div>
+      <div class="hero-contact">
+        <span class="contact-item"><i class="fa fa-envelope"></i> tkpham [at] connect.ust.hk</span>
+        <span class="contact-item"><i class="fa fa-map-marker-alt"></i> Hong Kong SAR</span>
+      </div>
+      <div class="hero-links">
+        <a class="hero-link primary" href="https://raw.githubusercontent.com/tkpham3105/tkpham3105.github.io/master/TK%20Pham%20-%20Homepage_files/CV/CV_TK_20251017.pdf" target="_blank">
+          <i class="fa fa-file-alt"></i> Resumé / CV
+        </a>
+        <a class="hero-link outline" href="https://scholar.google.com/citations?hl=en&pli=1&user=wBFw8x4AAAAJ" target="_blank">
+          <i class="ai ai-google-scholar"></i> Scholar
+        </a>
+        <a class="hero-link outline" href="https://orcid.org/0009-0003-4529-8584" target="_blank">
+          <i class="ai ai-orcid"></i> ORCID
+        </a>
+        <a class="hero-link outline" href="https://github.com/tkpham3105" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a class="hero-link outline" href="https://raw.githubusercontent.com/tkpham3105/tkpham3105.github.io/master/TK%20Pham%20-%20Homepage_files/images/wechat_qr.jpg" target="_blank">
+          <i class="fab fa-weixin"></i> WeChat
+        </a>
+      </div>
+    </div>
+  </div>
 
-    <div class="wrapper">
+  <!-- ===== ABOUT ===== -->
+  <section class="section section-about" id="about">
+    <div class="section-header">
+      <div class="section-icon"><i class="fa fa-user"></i></div>
+      <h2 class="section-title">About Me</h2>
+    </div>
+    <div class="about-card">
+      <p>
+        Hi 👋, I am currently a PhD student at
+        <a href="https://hkust.edu.hk/" target="_blank">HKUST</a>,
+        co-advised by
+        <a href="https://scholar.google.com/citations?user=-gtmMpIAAAAJ&hl=zh-CN&view_op=list_works&sortby=pubdate" target="_blank">Prof. Long Chen</a>
+        in the
+        <a href="https://long-group.cse.ust.hk/" target="_blank">LONG Group</a>
+        and
+        <a href="https://scholar.google.com/citations?hl=zh-CN&user=lLMX9hcAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Prof. Qifeng Chen</a>
+        in the
+        <a href="https://cqf.io/lab.html" target="_blank">Visual Intelligence Lab</a>.
+        Previously, I completed my MPhil at HKUST under the guidance of Prof. Qifeng Chen, a journey filled with joy and success.
+        Before that, I earned my BSc Degree with First Class Honors, double majoring in Data Science and Computer Science.
+        I am also an alum of the
+        <a href="https://www.math.hkust.edu.hk/ug/chern_class/" target="_blank">S.S. Chern Class</a>,
+        an elite class for students with demonstrated mathematical excellence.
+      </p>
+      <p>
+        During my MPhil, I worked on creative applications of
+        <span class="tag tag-blue"><strong>Diffusion Models</strong></span>
+        such as <em>Image Composition</em>, as well as engaged in projects about
+        <span class="tag tag-purple"><strong>Visual Perception</strong></span>
+        for <em>Autonomous Driving</em> and <em>Humanoid Robotics</em>.
+        For my current research, I will mainly focus on exploring
+        <span class="tag tag-green"><strong>Audio-Video Generation and Understanding</strong></span>.
+      </p>
+      <div class="collab-note">
+        <i class="fa fa-envelope"></i>
+        Feel free to contact me by Email/WeChat if you are interested in discussing or collaborating with me!
+      </div>
+    </div>
+  </section>
 
+  <!-- ===== NEWS ===== -->
+  <section class="section section-news" id="news">
+    <div class="section-header">
+      <div class="section-icon"><i class="fa fa-newspaper"></i></div>
+      <h2 class="section-title">News</h2>
+    </div>
+    <div class="news-list">
+      <div class="news-item">
+        <span class="news-date">Oct. 2025</span>
+        <span class="news-text">✈️ I'm very excited to attend <a href="https://iclr.cc/Conferences/2025" target="_blank">ACM MM 2025</a> in Dublin, Ireland to present our paper!</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">Jul. 2025</span>
+        <span class="news-text">🥳 One paper accepted to <a href="https://acmmm2025.org/" target="_blank">ACM MM 2025</a>.</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">Apr. 2025</span>
+        <span class="news-text">✈️ I'm very excited to attend <a href="https://iclr.cc/Conferences/2025" target="_blank">ICLR 2025</a> in Singapore!</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">Oct. 2024</span>
+        <span class="news-text">✈️ I'm very excited to attend <a href="https://2024.acmmm.org/" target="_blank">ACM MM 2024</a> in Melbourne, Australia to present our paper!</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">Jul. 2024</span>
+        <span class="news-text">🥳 One paper accepted to <a href="https://2024.acmmm.org/" target="_blank">ACM MM 2024</a>.</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">Jun. 2024</span>
+        <span class="news-text">🥳 One paper accepted to <a href="https://www.ro-man2024.org/" target="_blank">RO-MAN 2024</a>.</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">May. 2024</span>
+        <span class="news-text">✈️ I'm very excited to attend <a href="https://2024.ieee-icra.org/" target="_blank">ICRA 2024</a> in Yokohama, Japan to present our paper!</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">Jan. 2024</span>
+        <span class="news-text">🥳 One paper accepted to <a href="https://2024.ieee-icra.org/" target="_blank">ICRA 2024</a>.</span>
+      </div>
+    </div>
+  </section>
 
-        <section class="section intro-section">
+  <!-- ===== PAPERS ===== -->
+  <section class="section section-papers" id="papers">
+    <div class="section-header">
+      <div class="section-icon"><i class="fa fa-scroll"></i></div>
+      <h2 class="section-title">Publications</h2>
+    </div>
 
+    <div class="subsection-label">Selected Papers</div>
 
-            <div class="avatar-container">
-                <img class="avatar" src="./TK Pham - Homepage_files/images/tkpham_10292025.jpg" alt="avatar">
+    <!-- SpA2V -->
+    <div class="paper-card">
+      <div class="paper-thumb">
+        <img
+          src="https://raw.githubusercontent.com/tkpham3105/tkpham3105.github.io/master/TK%20Pham%20-%20Homepage_files/SpA2V/teaser.png"
+          alt="SpA2V teaser"
+          onerror="this.parentElement.style.background='#dbeafe'"
+        />
+      </div>
+      <div class="paper-info">
+        <div class="paper-title">
+          <a href="https://arxiv.org/abs/2508.00782" target="_blank">
+            SpA2V: Harnessing Spatial Auditory Cues for Audio-driven Spatially-aware Video Generation
+          </a>
+        </div>
+        <div class="paper-authors"><strong>Kien T. Pham</strong>, Yingqing He, Yazhou Xing, Qifeng Chen, Long Chen</div>
+        <div class="paper-venue"><em>ACM International Conference on Multimedia</em> (<strong>MM</strong>), 2025</div>
+        <div class="paper-links">
+          <a class="paper-link page" href="https://tkpham3105.github.io/spa2v" target="_blank"><i class="fa fa-globe"></i> Page</a>
+          <a class="paper-link code" href="https://github.com/tkpham3105/SpA2V" target="_blank"><i class="fab fa-github"></i> Code (soon)</a>
+          <a class="paper-link arxiv" href="https://arxiv.org/abs/2508.00782" target="_blank"><i class="ai ai-arxiv"></i> arXiv</a>
+          <a class="paper-link" href="https://dl.acm.org/doi/10.1145/3746027.3755705" target="_blank"><i class="fa fa-file-alt"></i> Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- TALE -->
+    <div class="paper-card">
+      <div class="paper-thumb">
+        <img
+          src="https://raw.githubusercontent.com/tkpham3105/tkpham3105.github.io/master/TK%20Pham%20-%20Homepage_files/TALE/teaser.png"
+          alt="TALE teaser"
+          onerror="this.parentElement.style.background='#ede9fe'"
+        />
+      </div>
+      <div class="paper-info">
+        <div class="paper-title">
+          <a href="https://tkpham3105.github.io/tale" target="_blank">
+            TALE: Training-free Cross-domain Image Composition via Adaptive Latent Manipulation and Energy-guided Optimization
+          </a>
+        </div>
+        <div class="paper-authors"><strong>Kien T. Pham</strong>, Jingye Chen, Qifeng Chen</div>
+        <div class="paper-venue"><em>ACM International Conference on Multimedia</em> (<strong>MM</strong>), 2024</div>
+        <div class="paper-links">
+          <a class="paper-link page" href="https://tkpham3105.github.io/tale" target="_blank"><i class="fa fa-globe"></i> Page</a>
+          <a class="paper-link code" href="https://github.com/tkpham3105/TALE" target="_blank"><i class="fab fa-github"></i> Code</a>
+          <a class="paper-link arxiv" href="https://arxiv.org/abs/2408.03637" target="_blank"><i class="ai ai-arxiv"></i> arXiv</a>
+          <a class="paper-link" href="https://dl.acm.org/doi/10.1145/3664647.3681079" target="_blank"><i class="fa fa-file-alt"></i> Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection-label">Other Papers</div>
+
+    <!-- RO-MAN -->
+    <div class="paper-card">
+      <div class="paper-thumb">
+        <img
+          src="https://raw.githubusercontent.com/tkpham3105/tkpham3105.github.io/master/TK%20Pham%20-%20Homepage_files/GRACE/teaser2.png"
+          alt="Humanoid Robot teaser"
+          onerror="this.parentElement.style.background='#dcfce7'"
+        />
+      </div>
+      <div class="paper-info">
+        <div class="paper-title">
+          <a href="https://ieeexplore.ieee.org/document/10731285/" target="_blank">
+            A Humanoid Robot Dialogue System Architecture Targeting Patient Interview Tasks
+          </a>
+        </div>
+        <div class="paper-authors">
+          Yifan Shen∗, Dingdong Liu∗, Yejin Bang∗, Ho Shu Chan, Rita Frieske, Hoo Choun Chung,
+          Jay Nieles, Tianjia Zhang, <strong>Kien T. Pham</strong>, Wai Yi Rosita Cheng, Yini Fang,
+          Qifeng Chen, Pascale Fung, Xiaojuan Ma, Bertram Shi
+        </div>
+        <div class="paper-venue"><em>IEEE International Conference on Robot and Human Interactive Communication</em> (<strong>RO-MAN</strong>), 2024</div>
+        <div class="paper-award">✨ 3rd Place — Best Industry Application Award</div>
+        <div class="paper-links">
+          <a class="paper-link" href="https://ieeexplore.ieee.org/document/10731285/" target="_blank"><i class="fa fa-file-alt"></i> Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ICRA -->
+    <div class="paper-card">
+      <div class="paper-thumb">
+        <img
+          src="https://raw.githubusercontent.com/tkpham3105/tkpham3105.github.io/master/TK%20Pham%20-%20Homepage_files/CCSU/ccsu.png"
+          alt="CCSU teaser"
+          onerror="this.parentElement.style.background='#fef9c3'"
+        />
+      </div>
+      <div class="paper-info">
+        <div class="paper-title">
+          <a href="https://arxiv.org/abs/2403.06166" target="_blank">
+            Cross-Cluster Shifting for Efficient and Effective 3D Object Detection in Autonomous Driving
+          </a>
+        </div>
+        <div class="paper-authors">Zhili Chen, <strong>Kien T. Pham</strong>, Maosheng Ye, Zhiqiang Shen, Qifeng Chen</div>
+        <div class="paper-venue"><em>IEEE International Conference on Robotics and Automation</em> (<strong>ICRA</strong>), 2024</div>
+        <div class="paper-links">
+          <a class="paper-link arxiv" href="https://arxiv.org/abs/2403.06166" target="_blank"><i class="ai ai-arxiv"></i> arXiv</a>
+          <a class="paper-link" href="https://ieeexplore.ieee.org/document/10611345" target="_blank"><i class="fa fa-file-alt"></i> Paper</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SIDE PROJECTS ===== -->
+  <section class="section section-projects" id="projects">
+    <div class="section-header">
+      <div class="section-icon"><i class="fa fa-flask"></i></div>
+      <h2 class="section-title">Side Projects</h2>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-thumb">
+        <img
+          src="https://raw.githubusercontent.com/tkpham3105/tkpham3105.github.io/master/TK%20Pham%20-%20Homepage_files/Medical/teaser.png"
+          alt="Medical Cancer Image Generation"
+          onerror="this.parentElement.style.background='#fff7ed'"
+        />
+      </div>
+      <div class="paper-info">
+        <div class="paper-title">
+          <a href="https://github.com/tkpham3105/tkpham3105.github.io/blob/master/TK%20Pham%20-%20Homepage_files/Medical/report.pdf" target="_blank">
+            Training-free Diffusion-based Medical Cancer Image Generation
+          </a>
+        </div>
+        <div class="paper-authors" style="margin-bottom:0.4rem;">
+          Propose a method for generating highly realistic medical cancer images given any pairs of non-tumorous background and tumour object images, directly utilizing the pretrained Stable Diffusion.
+        </div>
+        <div class="paper-venue"><em>Project Report</em>, 2024</div>
+        <div class="paper-links">
+          <a class="paper-link pdf" href="https://github.com/tkpham3105/tkpham3105.github.io/blob/master/TK%20Pham%20-%20Homepage_files/Medical/report.pdf" target="_blank"><i class="fa fa-file-pdf"></i> PDF</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section class="section section-edu" id="education">
+    <div class="section-header">
+      <div class="section-icon"><i class="fa fa-graduation-cap"></i></div>
+      <h2 class="section-title">Education</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <div class="timeline-org">Hong Kong University of Science and Technology (HKUST)</div>
+          <div class="timeline-meta">
+            <span class="timeline-location"><i class="fa fa-map-marker-alt"></i> Hong Kong</span>
+            <span class="timeline-date">Sep. 2018 – Present</span>
+          </div>
+        </div>
+        <div class="timeline-roles">
+          <div class="timeline-role">
+            PhD in CSE, co-advised by
+            <a href="https://scholar.google.com/citations?user=-gtmMpIAAAAJ&hl=zh-CN&view_op=list_works&sortby=pubdate" target="_blank">Prof. Long Chen</a>
+            and
+            <a href="https://scholar.google.com/citations?hl=zh-CN&user=lLMX9hcAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Prof. Qifeng Chen</a>
+          </div>
+          <div class="timeline-role">
+            MPhil in CSE, advised by
+            <a href="https://scholar.google.com/citations?hl=zh-CN&user=lLMX9hcAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Prof. Qifeng Chen</a>
+          </div>
+          <div class="timeline-role">
+            BSc in DSc and CS (First Class Honors), co-advised by
+            <a href="https://www.math.hkust.edu.hk/people/faculty/profile/macwyu/" target="_blank">Prof. Chi-Wai Yu</a>
+            and
+            <a href="https://www.math.hkust.edu.hk/people/faculty/profile/maybku/" target="_blank">Dr. Albert Yin-Bon Ku</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INDUSTRY ===== -->
+  <section class="section section-industry" id="industry">
+    <div class="section-header">
+      <div class="section-icon"><i class="fa fa-briefcase"></i></div>
+      <h2 class="section-title">Industry Experience</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-item-with-logo">
+          <img src="https://www.huawei.com/favicon.ico" alt="Huawei" class="timeline-logo" />
+          <div class="timeline-item-content">
+            <div class="timeline-header">
+              <div class="timeline-org">Huawei AI Lab</div>
+              <div class="timeline-meta">
+                <span class="timeline-location"><i class="fa fa-map-marker-alt"></i> Hong Kong, On-site</span>
+                <span class="timeline-date">Feb. 2026 – Present</span>
+              </div>
             </div>
-
-            <div class="intro-container">
-
-                <div class="header">
-                    <h2 class="name">Kien T. Pham (TK)</h2>
-
-                    <h3 class="title">PhD Student @ HKUST</h3>
-
-                </div>
-
-
-                <div class="contact">
-
-
-                    <ul class="list-unstyled contact-list">
-
-                        <li class="email">
-                            <i class="fa fa-envelope"></i> tkpham [at] connect.ust.hk
-                        </li>
-
-                        <li class="cv">
-                            <i class="fa fa-file"></i> <a class="link" href="./TK Pham - Homepage_files/CV/CV_TK_20251017.pdf"
-                                target="_blank"> Resumé / CV</a>
-                        </li>
-
-                    </ul>
-
-
-                    <ul class="list-unstyled contact-list">
-
-                        <li class="google-scholar">
-                            <a class="link" href="https://scholar.google.com/citations?hl=en&pli=1&user=wBFw8x4AAAAJ"
-                                target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                        </li>
-
-                        <li class="ocrid">
-                            <a class="link" href="https://orcid.org/0009-0003-4529-8584"
-                                target="_blank"><i class="fab fa-orcid"></i></a>
-                        </li>
-
-                        <li class="github">
-                            <a class="link" href="https://github.com/tkpham3105" target="_blank"><i class="fab fa-github"></i></a>
-                        </li>
-
-                        <li class="wechat">
-                            <a class="link" href="./TK Pham - Homepage_files/images/wechat_qr.jpg" target="_blank"><i class="fab fa-weixin"></i></a>
-                        </li>
-
-                    </ul>
-
-
-                </div>
+            <div class="timeline-roles">
+              <div class="timeline-role">Research Intern — Research on Unified Foundation Model for Audio-Video.</div>
+              <div class="timeline-mentor"><strong>Mentor:</strong> 
+                <a href="https://scholar.google.com/citations?user=VI4i67QAAAAJ&hl=en" target="_blank">Dr. Haoxuan Che</a>
+              </div>
             </div>
-
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-
-        </section>
-
-
-
-        <section class="section profile-section">
-
-            <div class="section-title">
-                About Me
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-item-with-logo">
+          <img src="http://jeneration.com/capital/wp-content/uploads/2016/10/Deep-Route-1.png" alt="DeepRoute.ai" class="timeline-logo" />
+          <div class="timeline-item-content">
+            <div class="timeline-header">
+              <div class="timeline-org">DeepRoute.ai</div>
+              <div class="timeline-meta">
+                <span class="timeline-location"><i class="fa fa-map-marker-alt"></i> Shenzhen, On-site</span>
+                <span class="timeline-date">May. 2025 – Nov. 2025</span>
+              </div>
             </div>
-
-            <div class="details">
-
-                <p>Hi👋, I am currently a PhD student at HKUST, co-advised by <a
-                        href="https://scholar.google.com/citations?user=-gtmMpIAAAAJ&hl=zh-CN&view_op=list_works&sortby=pubdate"
-                        target="_blank">Prof. Long Chen</a> in the <a
-                        href="https://long-group.cse.ust.hk/"
-                        target="_blank">LONG Group</a> and <a
-                        href="https://scholar.google.com/citations?hl=zh-CN&user=lLMX9hcAAAAJ&view_op=list_works&sortby=pubdate"
-                        target="_blank">Prof. Qifeng Chen</a> in the <a
-                        href="https://cqf.io/lab.html"
-                        target="_blank">Visual Intelligence Lab</a>. Previously, I completed my MPhil at <a
-                        href="https://hkust.edu.hk/"
-                        target="_blank">HKUST</a> under the guidance of Prof. Qifeng Chen, a journey filled with joy and success. Before that, I earned my BSc Degree with First Class Honors, double majoring in Data Science and Computer Science. I am also an alum of the <a
-                        href="https://www.math.hkust.edu.hk/ug/chern_class/"
-                        target="_blank">S.S. Chern Class</a>, an elite class for students with demonstrated mathematical excellence.
-                </p>
-                <p>During my MPhil, I worked on some creative applications of <b>Diffusion Models</b> such as <em>Image Composition</em>, as well as engaged in projects about <b>Visual Perception</b> for <em>Autonomous Driving</em> and <em>Humanoid Robotics</em>. For my current research, I will mainly focus on exploring <b>Multimodal Generation and Understanding</b>. 
-                </p>
-                <p style="color: red;">Feel free to contact me by email if you are interested in discussing or collaborating with me!</p>
-
+            <div class="timeline-roles">
+              <div class="timeline-role">Algorithm Research Intern — R&amp;D on VLA Model for Autonomous Driving.</div>
+              <div class="timeline-mentor"><strong>Mentor: </strong>
+                <a href="https://scholar.google.com/citations?user=VI4i67QAAAAJ&hl=en" target="_blank">Dr. Zhili Chen</a>
+              </div>
             </div>
-
-        </section>
-
-
-
-        <section class="section news-section">
-            <div class="section-title">
-                News
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-item-with-logo">
+          <img src="https://www.viact.ai/favicon.ico" alt="viAct" class="timeline-logo" />
+          <div class="timeline-item-content">
+            <div class="timeline-header">
+              <div class="timeline-org">viAct</div>
+              <div class="timeline-meta">
+                <span class="timeline-location"><i class="fa fa-map-marker-alt"></i> Hong Kong, Remote</span>
+                <span class="timeline-date">Mar. 2021 – Aug. 2021</span>
+              </div>
             </div>
-
-            <div class="item">
-                <div class="upper-row">
-                    <div class="time"> [Oct. 2025] </div>
-                    <div class="cont">
-                        <p>✈️ I'm very excited to attend <a
-                        href="https://iclr.cc/Conferences/2025"
-                        target="_blank">ACM MM 2025</a> in Dublin, Ireland to present our paper!</p> 
-                    </div>
-                </div>
+            <div class="timeline-roles">
+              <div class="timeline-role">AI Trainee — Working on Video Analytics for ConTech Domain.</div>
             </div>
-
-            <div class="item">
-                <div class="upper-row">
-                    <div class="time"> [Jul. 2025] </div>
-                    <div class="cont">
-                        <p>🥳 One paper accepted to <a
-                        href="https://acmmm2025.org/"
-                        target="_blank">ACM MM 2025</a>.</p>
-                    </div>
-                </div>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-item-with-logo">
+          <img src="https://runsystem.net/themes/custom/runsystem/favicon.ico" alt="GMO-Z.com RUNSYSTEM" class="timeline-logo" />
+          <div class="timeline-item-content">
+            <div class="timeline-header">
+              <div class="timeline-org">GMO-Z.com RUNSYSTEM</div>
+              <div class="timeline-meta">
+                <span class="timeline-location"><i class="fa fa-map-marker-alt"></i> Hanoi, On-site</span>
+                <span class="timeline-date">Mar. 2020 – May. 2020</span>
+              </div>
             </div>
-
-            <div class="item">
-                <div class="upper-row">
-                    <div class="time"> [Apr. 2025] </div>
-                    <div class="cont">
-                        <p>✈️ I'm very excited to attend <a
-                        href="https://iclr.cc/Conferences/2025"
-                        target="_blank">ICLR 2025</a> in Singapore!</p> 
-                    </div>
-                </div>
+            <div class="timeline-roles">
+              <div class="timeline-role">AI Intern — Working on OCR-centric tasks.</div>
             </div>
-
-            <div class="item">
-                <div class="upper-row">
-                    <div class="time"> [Oct. 2024] </div>
-                    <div class="cont">
-                        <p>✈️ I'm very excited to attend <a
-                        href="https://2024.acmmm.org/"
-                        target="_blank">ACM MM 2024</a> in Melbourne, Australia to present our paper!</p> 
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="item">
-                <div class="upper-row">
-                    <div class="time"> [Jul. 2024] </div>
-                    <div class="cont">
-                        <p>🥳 One paper accepted to <a
-                        href="https://2024.acmmm.org/"
-                        target="_blank">ACM MM 2024</a>.</p>
-                    </div>
-                </div>
-            </div>
-         
-
-            <div class="item">
-                <div class="upper-row">
-                    <div class="time"> [Jun. 2024] </div>
-                    <div class="cont">
-                        <p>🥳 One paper accepted to <a
-                        href="https://www.ro-man2024.org/"
-                        target="_blank">RO-MAN 2024</a>.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="upper-row">
-                    <div class="time"> [May. 2024] </div>
-                    <div class="cont">
-                        <p>✈️ I'm very excited to attend <a
-                        href="https://2024.ieee-icra.org/"
-                        target="_blank">ICRA 2024</a> in Yokohama, Japan to present our paper!</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="upper-row">
-                    <div class="time"> [Jan. 2024] </div>
-                    <div class="cont">
-                        <p>🥳 One paper accepted to <a
-                        href="https://2024.ieee-icra.org/"
-                        target="_blank">ICRA 2024</a>.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="section publications-section">
-
-            <div class="section-title">
-                Selected Papers
-            </div>
-
-            <div class="publication-container">
-                <div class="teaser-container">
-                    <img class="teaser" src="./TK Pham - Homepage_files/SpA2V/teaser.png" alt="spa2v.png">
-                </div>
-
-
-                <div class="info-container">
-
-                    <p class="title">
-
-                        <a class="title_link" href="https://arxiv.org/abs/2508.00782" target="_blank">
-                            SpA2V: Harnessing Spatial Auditory Cues for Audio-driven Spatially-aware Video Generation
-                        </a>
-
-                    </p>
-
-                    <div class="authors">
-                        <p><strong>Kien T. Pham</strong>, Yingqing He, Yazhou Xing, Qifeng Chen, Long Chen</p>
-                    </div>
-                    <div class="conference">
-                        <p><em>ACM International Conference on Multimedia</em> (<strong>MM</strong>), 2025</p>
-                    </div>
-                    <a class="url" href="https://tkpham3105.github.io/spa2v" target="_blank">[Page]</a> <a class="url" href="https://github.com/tkpham3105/SpA2V" target="_blank">[Code (soon)]</a> <a class="url" href="https://arxiv.org/abs/2508.00782" target="_blank">[arXiv]</a> <a class="url" href="https://dl.acm.org/doi/10.1145/3746027.3755705" target="_blank">[Paper]</a>
-                </div>
-            </div>
-
-            <div class="publication-container">
-                <div class="teaser-container">
-                    <img class="teaser" src="./TK Pham - Homepage_files/TALE/teaser.png" alt="tale.png">
-                </div>
-
-
-                <div class="info-container">
-
-                    <p class="title">
-
-                        <a class="title_link" href="https://tkpham3105.github.io/tale" target="_blank">
-                            TALE: Training-free Cross-domain Image Composition via Adaptive Latent Manipulation and Energy-guided Optimization
-                        </a>
-
-                    </p>
-
-                    <div class="authors">
-                        <p><strong>Kien T. Pham</strong>, Jingye Chen, Qifeng Chen</p>
-                    </div>
-                    <div class="conference">
-                        <p><em>ACM International Conference on Multimedia</em> (<strong>MM</strong>), 2024</p>
-                    </div>
-                    <a class="url" href="https://tkpham3105.github.io/tale" target="_blank">[Page]</a> <a class="url" href="https://github.com/tkpham3105/TALE" target="_blank">[Code]</a> <a class="url" href="https://arxiv.org/abs/2408.03637" target="_blank">[arXiv]</a> <a class="url" href="https://dl.acm.org/doi/10.1145/3664647.3681079" target="_blank">[Paper]</a>
-                </div>
-            </div>
-
-            <div class="section-title">
-                Other Papers
-            </div>
-
-            <div class="publication-container">
-                <div class="teaser-container">
-                    <img class="teaser" src="./TK Pham - Homepage_files/GRACE/teaser2.png" alt="ccsu.png">
-                </div>
-
-
-                <div class="info-container">
-
-                    <p class="title">
-
-                        <a class="title_link" href="https://ieeexplore.ieee.org/document/10731285/" target="_blank">
-                            A Humanoid Robot Dialogue System Architecture Targeting Patient Interview Tasks
-                        </a>
-
-                    </p>
-
-                    <div class="authors">
-                        <p>Yifan Shen∗, Dingdong Liu∗, Yejin Bang∗, Ho Shu Chan, Rita Frieske, Hoo Choun Chung,
-                            Jay Nieles, Tianjia Zhang, <strong>Kien T. Pham</strong>, Wai Yi Rosita Cheng, Yini Fang,
-                            Qifeng Chen, Pascale Fung, Xiaojuan Ma, Bertram Shi</p>
-                    </div>
-                    <div class="conference">
-                        <p><em>IEEE International Conference on Robot and Human Interactive Communication</em> (<strong>RO-MAN</strong>), 2024</p>
-                    </div>
-                    <div class="conference">
-                        <p>✨ <em><strong>3rd Place</strong> for the Best Industry Application Award</em></p>
-                    </div>
-                    <a class="url" href="https://ieeexplore.ieee.org/document/10731285/" target="_blank">[Paper]</a>
-                </div>
-            </div>
-
-            <div class="publication-container">
-                <div class="teaser-container">
-                    <img class="teaser" src="./TK Pham - Homepage_files/CCSU/ccsu.png" alt="ccsu.png">
-                </div>
-
-
-                <div class="info-container">
-
-                    <p class="title">
-
-                        <a class="title_link" href="https://arxiv.org/abs/2403.06166" target="_blank">
-                            Cross-Cluster Shifting for Efficient and Effective 3D Object Detection in Autonomous Driving
-                        </a>
-
-                    </p>
-
-                    <div class="authors">
-                        <p>Zhili Chen, <strong>Kien T. Pham</strong>, Maosheng Ye, Zhiqiang Shen, Qifeng Chen</p>
-                    </div>
-                    <div class="conference">
-                        <p><em>IEEE International Conference on Robotics and Automation</em> (<strong>ICRA</strong>), 2024</p>
-                    </div>
-                    <a class="url" href="https://arxiv.org/abs/2403.06166" target="_blank">[arXiv]</a> <a class="url" href="https://ieeexplore.ieee.org/document/10611345" target="_blank">[Paper]</a>
-                </div>
-            </div>
-
-        </section>
-
-        <section class="section publications-section">
-
-            <div class="section-title">
-                Side Projects
-            </div>
-
-            <div class="publication-container">
-                <div class="teaser-container">
-                    <img class="teaser" src="./TK Pham - Homepage_files/Medical/teaser.png" alt="teaser.png">
-                </div>
-
-
-                <div class="info-container">
-
-                    <p class="title">
-
-                        <a class="title_link" href="https://github.com/tkpham3105/tkpham3105.github.io/blob/master/TK Pham - Homepage_files/Medical/report.pdf" target="_blank">
-                            Training-free Diffusion-based Medical Cancer Image Generation
-                        </a>
-
-                    </p>
-
-                    <div class="description">
-                        <p>
-                        Propose a method for generating highly realistic medical cancer images given any pairs of non-tumorous background and tumour object images, directly utilizing the pretrained Stable Diffusion.</p>
-                    </div>
-                    <div class="conference">
-                        <p><em>Project Report</em>, 2024</p>
-                    </div>
-                    <a class="url" href="https://github.com/tkpham3105/tkpham3105.github.io/blob/master/TK Pham - Homepage_files/Medical/report.pdf" target="_blank">[PDF]</a>
-                </div>
-            </div>
-
-<!--             <div class="publication-container">
-                <div class="teaser-container">
-                    <img class="teaser" src="./TK Pham - Homepage_files/Federated/fmlu.png" alt="fmlu.png">
-                </div>
-
-
-                <div class="info-container">
-
-                    <p class="title">
-
-                        <a class="title_link" href="https://github.com/tkpham3105/tkpham3105.github.io/blob/master/TK Pham - Homepage_files/Federated/report.pdf" target="_blank">
-                            FMLU: Weighted Federated Mutual Learning with Uncertainty-aware Balancing Scheme
-                        </a>
-
-                    </p>
-
-                    <div class="description">
-                        <p>
-                        Attempt to improve FML by quantifying the uncertainty levels of the meme and local models for each client and leverage it as the weighting scheme for both global model aggregation and client update stages.</p>
-                    </div>
-                    <div class="conference">
-                        <p><em>Project Report</em>, 2023</p>
-                    </div>
-                    <a class="url" href="https://github.com/tkpham3105/tkpham3105.github.io/blob/master/TK Pham - Homepage_files/Federated/report.pdf" target="_blank">[PDF]</a>
-                </div>
-            </div>
-        </section> -->
-
-        <section class="section experiences-section">
-            <div class="section-title">
-                Education
-            </div>
-
-            <div class="item">
-
-                <div class="upper-row">
-                    <div class="company">
-                        HKUST
-
-                    </div>
-                    <div class="location"> Hong Kong</div>
-                    <div class="time">Sep. 2018 – Present</div>
-                </div>
-
-                <div class="below-row">
-                    <div class="role">PhD Student in Computer Science and Engineering, co-advised by <a
-                            href="https://scholar.google.com/citations?user=-gtmMpIAAAAJ&hl=zh-CN&view_op=list_works&sortby=pubdate"
-                            target="_blank">Prof. Long Chen</a> and <a
-                            href="https://scholar.google.com/citations?hl=zh-CN&user=lLMX9hcAAAAJ&view_op=list_works&sortby=pubdate"
-                            target="_blank">Prof. Qifeng Chen</a>
-                    </div>
-                </div>
-
-                <div class="below-row">
-                    <div class="role">MPhil Student in Computer Science and Engineering, advised by <a
-                            href="https://scholar.google.com/citations?hl=zh-CN&user=lLMX9hcAAAAJ&view_op=list_works&sortby=pubdate"
-                            target="_blank">Prof. Qifeng Chen</a>
-                    </div>
-                </div>
-
-                <div class="below-row">
-                    <div class="role">BSc in Data Science and Computer Science, co-advised by <a
-                            href="https://www.math.hkust.edu.hk/people/faculty/profile/macwyu/"
-                            target="_blank">Prof. Chi-Wai Yu</a> and <a
-                            href="https://www.math.hkust.edu.hk/people/faculty/profile/maybku/"
-                            target="_blank">Dr. Albert Yin-Bon Ku</a>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-
-        <section class="section experiences-section">
-
-            <div class="section-title">
-                Industry Experience
-            </div>
-
-            <div class="item">
-
-                <div class="upper-row">
-                    <div class="company">DeepRoute.ai</div>
-                    <div class="location"> Shenzhen, On-site</div>
-                    <div class="time">May. 2025 - Nov. 2025</div>
-                </div>
-
-                <div class="below-row">
-                    <div class="role">Algorithm Research Intern - R&D on VLA model for Autonomous Driving.</div>
-                </div>
-
-            </div>
-
-            <div class="item">
-
-                <div class="upper-row">
-                    <div class="company">viAct</div>
-                    <div class="location"> Hong Kong, Remote</div>
-                    <div class="time">Mar. 2021 - Aug. 2021</div>
-                </div>
-
-                <div class="below-row">
-                    <div class="role">AI Trainee - Working on Video Analytics for ConTech Domain.</div>
-                </div>
-
-            </div>
-
-            <div class="item">
-
-                <div class="upper-row">
-                    <div class="company">GMO-Z.com RUNSYSTEM</div>
-                    <div class="location"> Hanoi, On-site</div>
-                    <div class="time">Mar. 2020 - May. 2020</div>
-                </div>
-
-                <div class="below-row">
-                    <div class="role">AI Intern - Working on OCR-centric tasks.</div>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <section class="section teaching-section">
-            <div class="section-title">
-                Teaching
-            </div>
-
-            <div class="item">
-
-                <div class="upper-row">
-                    <div class="name">
-                        <p><b>2024 FALL, 2022 SPRING:</b> COMP1021 - Introduction to Computer Science</p>
-                        <p><b>2023 FALL:</b> COMP4471/ELEC4240 - Deep Learning in Computer Vision</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="section services-section">
-            <div class="section-title">
-                Community Services
-            </div>
-
-            <div class="item">
-
-                <div class="upper-row">
-                    <div class="name">
-                        <p><b>2025:</b> NeurIPS, ICCV, ICML, CVPR, ICLR, AISTAT</p>
-                        <p><b>2024:</b> NeurIPS</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-
-        <section class="section awards-section">
-            <div class="section-title">
-                Awards &amp; Scholarships
-            </div>
-
-            <div class="item">
-
-                <div class="upper-row">
-                    <div class="name">
-                        <p>Postgraduate Studentship</p>
-
-                    </div>
-                    <div class="time">2022-Present</div>
-                </div>
-
-            </div>
-
-            <div class="item">
-
-                <div class="upper-row">
-                    <div class="name">
-                        <p>RTG Award, Hong Kong University of Science and Technology</p>
-
-                    </div>
-                    <div class="time">Spring 2024, Fall 2024</div>
-                </div>
-
-            </div>
-
-            <div class="item">
-
-                <div class="upper-row">
-                    <div class="name">
-                        <p>Chern Class Achievement Scholarship</p>
-
-                    </div>
-                    <div class="time">2022</div>
-                </div>
-
-            </div>
-
-            <div class="item">
-
-                <div class="upper-row">
-                    <div class="name">
-                        <p>Chern Class Talent Scholarship</p>
-
-                    </div>
-                    <div class="time">2020-2022</div>
-                </div>
-
-            </div>
-            <div class="item">
-
-                <div class="upper-row">
-                    <div class="name">
-                        <p>Chern Class Scholarship</p>
-
-                    </div>
-                    <div class="time">2019</div>
-                </div>
-
-            </div>
-
-            <div class="item">
-
-                <div class="upper-row">
-                    <div class="name">
-                        <p>Heart Free Lodge Scholarship</p>
-
-                    </div>
-                    <div class="time">2018</div>
-                </div>
-
-            </div>
-
-
-            <div class="item">
-
-                <div class="upper-row">
-                    <div class="name">
-                        <p>University Scholarship</p>
-
-                    </div>
-                    <div class="time">2018-2022</div>
-                </div>
-
-            </div>
-
-            <div class="item">
-
-                <div class="upper-row">
-                    <div class="name">
-                        <p>Dean's List</p>
-
-                    </div>
-                    <div class="time">Spring 2018, 2020; Fall 2019, 2021</div>
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-
-        <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=xBLA9l_ibxSoL5xnwV8HtvtlR9iAQ6y4NFyKOG52vWw'></script>
-
-        </section>
-
-
-
-
-        <footer class="footer">
-            <div class="text-center">
-
-                <small id="copyright">
-                    Updated: 2025-10-06
-
-                    By TK Pham :D
-                </small>
-            </div>
-        </footer>
-    
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEACHING ===== -->
+  <section class="section section-teaching" id="teaching">
+    <div class="section-header">
+      <div class="section-icon"><i class="fa fa-chalkboard-teacher"></i></div>
+      <h2 class="section-title">Teaching</h2>
+    </div>
+    <div class="simple-card">
+      <p><strong>2026 Spring:</strong> COMP2011 — Programming with C++</p>
+      <p><strong>2024 Fall, 2022 Spring:</strong> COMP1021 — Introduction to Computer Science</p>
+      <p><strong>2023 Fall:</strong> COMP4471/ELEC4240 — Deep Learning in Computer Vision</p>
+    </div>
+  </section>
+
+  <!-- ===== COMMUNITY SERVICES ===== -->
+  <section class="section section-service" id="service">
+    <div class="section-header">
+      <div class="section-icon"><i class="fa fa-users"></i></div>
+      <h2 class="section-title">Community Services</h2>
+    </div>
+    <div class="simple-card">
+      <p><strong>Conferences:</strong> NeurIPS, ICCV, ICML, CVPR, ICLR, AISTAT, BMVC</p>
+    </div>
+  </section>
+
+  <!-- ===== AWARDS ===== -->
+  <section class="section section-awards" id="awards">
+    <div class="section-header">
+      <div class="section-icon"><i class="fa fa-trophy"></i></div>
+      <h2 class="section-title">Awards &amp; Scholarships</h2>
+    </div>
+    <div class="awards-grid">
+      <div class="award-item">
+        <div class="award-icon"><i class="fa fa-medal"></i></div>
+        <div>
+          <div class="award-name">Postgraduate Studentship</div>
+          <div class="award-date">2022 – Present</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon"><i class="fa fa-award"></i></div>
+        <div>
+          <div class="award-name">RTG Award, HKUST</div>
+          <div class="award-date">Spring 2024, Fall 2024</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon"><i class="fa fa-star"></i></div>
+        <div>
+          <div class="award-name">Chern Class Achievement Scholarship</div>
+          <div class="award-date">2022</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon"><i class="fa fa-star"></i></div>
+        <div>
+          <div class="award-name">Chern Class Talent Scholarship</div>
+          <div class="award-date">2020 – 2022</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon"><i class="fa fa-star"></i></div>
+        <div>
+          <div class="award-name">Chern Class Scholarship</div>
+          <div class="award-date">2019</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon"><i class="fa fa-heart"></i></div>
+        <div>
+          <div class="award-name">Heart Free Lodge Scholarship</div>
+          <div class="award-date">2018</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon"><i class="fa fa-university"></i></div>
+        <div>
+          <div class="award-name">University Scholarship</div>
+          <div class="award-date">2018 – 2022</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon"><i class="fa fa-list-ol"></i></div>
+        <div>
+          <div class="award-name">Dean's List</div>
+          <div class="award-date">Spring 2018, 2020; Fall 2019, 2021</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visitor Map -->
+  <div style="text-align:center; margin-top: 1rem;">
+    <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=xBLA9l_ibxSoL5xnwV8HtvtlR9iAQ6y4NFyKOG52vWw'></script>
+  </div>
+
+</main>
+
+<footer>
+  <p>Updated: 2026-03-15 &nbsp;·&nbsp; By TK Pham 😄 &nbsp;·&nbsp;
+    <a href="https://github.com/tkpham3105/tkpham3105.github.io" target="_blank">View Source on GitHub</a>
+  </p>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fa fa-arrow-up"></i>
+</button>
+
+<script>
+  // ===== NAVBAR SCROLL =====
+  const navbar = document.getElementById('navbar');
+  const backToTop = document.getElementById('back-to-top');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sections = document.querySelectorAll('section[id], div[id="about"]');
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    navbar.classList.toggle('scrolled', scrollY > 20);
+    backToTop.classList.toggle('visible', scrollY > 300);
+
+    // Active nav link
+    let current = '';
+    document.querySelectorAll('section[id]').forEach(sec => {
+      if (scrollY >= sec.offsetTop - 100) current = sec.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  // ===== MOBILE NAV =====
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinksEl = document.getElementById('nav-links');
+  navToggle.addEventListener('click', () => navLinksEl.classList.toggle('open'));
+  navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinksEl.classList.remove('open')));
+
+  // ===== INTERSECTION OBSERVER (scroll reveal) =====
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.section, .hero').forEach(el => observer.observe(el));
+
+  // ===== PARTICLE BACKGROUND =====
+  (function() {
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let W, H, particles = [];
+    const N = 55;
+    const COLORS = ['#2563eb', '#0ea5e9', '#7c3aed', '#16a34a'];
+
+    function resize() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+
+    function rand(a, b) { return Math.random() * (b - a) + a; }
+
+    function createParticle() {
+      return {
+        x: rand(0, W), y: rand(0, H),
+        r: rand(1.5, 3.5),
+        vx: rand(-0.25, 0.25), vy: rand(-0.25, 0.25),
+        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+        alpha: rand(0.3, 0.7)
+      };
+    }
+
+    function init() {
+      resize();
+      particles = Array.from({ length: N }, createParticle);
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+
+      // Draw connections
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 140) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(37,99,235,${0.08 * (1 - dist / 140)})`;
+            ctx.lineWidth = 1;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw particles
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = p.color + Math.round(p.alpha * 255).toString(16).padStart(2, '0');
+        ctx.fill();
+
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < -10) p.x = W + 10;
+        if (p.x > W + 10) p.x = -10;
+        if (p.y < -10) p.y = H + 10;
+        if (p.y > H + 10) p.y = -10;
+      });
+
+      requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize', resize);
+    init();
+    draw();
+  })();
+</script>
 </body>
-
 </html>
